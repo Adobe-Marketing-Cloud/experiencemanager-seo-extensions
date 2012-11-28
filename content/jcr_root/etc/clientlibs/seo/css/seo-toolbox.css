@@ -15,15 +15,27 @@ div.edit-box {
     font-family: Tahoma, sans-serif;
     font-size: 14px;
     font-weight: normal;
+    color: #ffffff;
     z-index: 9002;
+    overflow: hidden;
+    min-height: 100px;
+    min-width: 180px;
 }
 
-.cq-seo-toolbox .cq-seo-tools {
+.cq-seo-toolbox.CQjquery {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    opacity: 0.94;
+}
+
+.cq-seo-toolbox .cq-seo-header {
     height: 28px;
     margin: -1px;
     background-color: #151515;
     border: 1px solid #151515;
     border-radius: 8px 8px 0px 0px;
+    white-space: nowrap;
 }
 
 .cq-seo-toolbox .tools .section {
@@ -42,6 +54,7 @@ div.edit-box {
     padding:0;
 }
 
+.cq-seo-toolbox h1,
 .cq-seo-toolbox h2 {
     width: auto;
     margin: 0;

@@ -1,38 +1,51 @@
 ;(function($) {
-    var seoButton = {
+    var initSEOToolbox = function() {
+        $.get("/etc/seo/toolbox.tools.html?wcmmode=disabled",
+                function(data) {
+                    var toolboxHTML = $(data)
+                            .addClass("CQjquery")
+                            .resizable()
+                            .draggable({
+                                handle: ".cq-seo-tools",
+                                addClasses: false
+                            })
+                            .removeAttr("style")
+                            .hide();
+                    $("#CQ").before(toolboxHTML);
+                    // TODO: restore position and size from cookie
+                    $(document).trigger("seo-toolbox-ready", toolboxHTML);
+                    toggleWithEvents(toolboxHTML);
+                }
+        );
+    };
+
+    var toggleSEOToolbox = function(cmp, evt) {
+        var toolboxHTML = $(".cq-seo-toolbox");
+        if (toolboxHTML.size() === 0) {
+            initSEOToolbox();
+        } else {
+            toggleWithEvents(toolboxHTML);
+        }
+    };
+
+    var toggleWithEvents = function(toolbox) {
+        if (toolbox.is(":hidden")) {
+            $(document).trigger("seo-toolbox-beforeshow", toolbox);
+        } else {
+            $(document).trigger("seo-toolbox-beforehide", toolbox);
+        }
+        toolbox.fadeToggle();
+    };
+
+    var seoButtonConfig = {
         text:"SEO",
         tooltip: {
             title: "SEO",
             text: CQ.I18n.getMessage("Show the SEO Tools"),
             autoHide: true
         },
-        handler: function(cmp, evt) {
-            var toolboxHTML = $(".cq-seo-toolbox");
-            if (toolboxHTML.size() === 0) {
-                $.get("/etc/seo/toolbox.tools.html?wcmmode=disabled",
-                        function(data) {
-                            toolboxHTML = $(data)
-                                    .addClass("CQjquery")
-                                    .resizable()
-                                    .draggable({
-                                        handle: ".cq-seo-tools",
-                                        addClasses: false
-                                    })
-                                    .removeAttr("style")
-                                    .css("position", "fixed")
-                                    .css("top", "50px")
-                                    .css("left", "50px")
-                                    .css("opacity", ".94")
-                                    .hide()
-                            $("#CQ").before(toolboxHTML)
-                            toolboxHTML.fadeToggle()
-                        }
-                )
-            } else {
-                toolboxHTML.fadeToggle()
-            }
-            this.toggle()
-        }
+        enableToggle: true,
+        handler: toggleSEOToolbox
     };
 
     CQ.WCM.on("sidekickready", function(sidekick) {
@@ -40,14 +53,21 @@
         bt.on("afterlayout", function(toolbar) {
             var seoButtons = $.grep(toolbar.items.items, function(button) {
                 return button.text === "SEO";
-            })
+            });
             if (seoButtons.length === 0) {
+                var seoButton;
                 var clientContextButtons = $.grep(toolbar.items.items, function(button) {
                     return button.iconCls === "cq-sidekick-clientcontext";
-                })
+                });
                 if (clientContextButtons.length > 0) {
-                    var idx = $.inArray(clientContextButtons[0], bt.items.items)
-                    toolbar.insertButton(idx + 1, seoButton)
+                    var idx = $.inArray(clientContextButtons[0], bt.items.items);
+                    seoButton = toolbar.insertButton(idx + 1, seoButtonConfig);
+                }
+
+                var displaySEOToolbox = window.location.search.indexOf("wcmmode=seo") > -1;
+                if (displaySEOToolbox) {
+                    toggleSEOToolbox();
+                    seoButton && seoButton.toggle();
                 }
             }
         });
