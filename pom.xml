@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.adobe.cq5.extensions</groupId>
+        <artifactId>seo-extensions-cq5-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>seo-extensions-build</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Seo-extensions: CQ5 Application Build</name>
+    <description>
+        This is the build reactor POM of the CQ5 application.
+    </description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <modules>
+        <module>parent</module>
+        <module>content/jcr_root/apps/seo-extensions/bundles/core</module>
+        <module>content</module>
+    </modules>
+</project>

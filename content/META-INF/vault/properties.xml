@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>FileVault Package Properties</comment>
+<entry key="createdBy">admin</entry>
+<entry key="jcr:created">2009-10-22T12:13:45.876+02:00</entry>
+<entry key="lastModified">2009-10-22T12:13:45.796+02:00</entry>
+<entry key="lastModifiedBy">2009-10-22T12:13:45.796+02:00</entry>
+<entry key="created">2009-10-22T12:13:45.791+02:00</entry>
+<entry key="buildCount">1</entry>
+<entry key="version">1.0</entry>
+<entry key="dependencies"/>
+<entry key="description"/>
+<entry key="path">/etc/packages/Seo-extensions/seo-extensions</entry>
+</properties>

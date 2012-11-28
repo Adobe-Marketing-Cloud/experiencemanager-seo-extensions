@@ -1,0 +1,2766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.adobe.cq5.extensions</groupId>
+    <artifactId>seo-extensions-cq5-dependencies</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Seo-Extensions: CQ5 Dependencies</name>
+    <description>
+        POM defining all dependencies that are deployed
+        as OSGi bundles.
+    </description>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.crx-packagemgr</artifactId>
+                <version>1.0.22</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.crx.packaging.gfx
+                    - com.day.crx.packaging
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.crxde-support</artifactId>
+                <version>2.3.12</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.crx.ide
+                    - com.day.crx.ide.scr
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.crypto</artifactId>
+                <version>0.0.18</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.adobe.granite.crypto;version="1.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.i18n</artifactId>
+                <version>5.5.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.adobe.granite.i18n;version="1.0"
+                    - com.day.cq.i18n;version="5.4.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.jcrclustersupport</artifactId>
+                <version>0.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.jcrclustersupport;version="2.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.jmx</artifactId>
+                <version>0.2.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.adobe.granite.jmx.annotation;version="1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.license</artifactId>
+                <version>0.5.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.adobe.granite.license;version="1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.poi</artifactId>
+                <version>1.0.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.poi.hssf.record.cf;version="1.0.2"
+                    - org.apache.poi.ss.extractor;version="1.0.2"
+                    - org.apache.poi.ss;version="1.0.2"
+                    - org.apache.poi.hslf.model.textproperties;version="1.0.2"
+                    - org.apache.poi.extractor;version="1.0.2"
+                    - org.apache.poi.poifs.filesystem;version="1.0.2"
+                    - org.apache.poi.hdf.extractor;version="1.0.2"
+                    - org.apache.poi.ddf;version="1.0.2"
+                    - org.apache.poi.hssf.record;version="1.0.2"
+                    - org.apache.poi.hwpf.model.types;version="1.0.2"
+                    - org.apache.poi.hmef;version="1.0.2"
+                    - org.apache.poi.hslf.dev;version="1.0.2"
+                    - org.apache.poi.openxml4j.exceptions;version="1.0.2"
+                    - org.apache.poi.hdf.extractor.data;version="1.0.2"
+                    - org.apache.poi.hssf.record.chart;version="1.0.2"
+                    - org.apache.poi.hslf.usermodel;version="1.0.2"
+                    - org.apache.poi.ss.format;version="1.0.2"
+                    - org.apache.poi.hdgf.dev;version="1.0.2"
+                    - org.apache.poi.poifs.storage;version="1.0.2"
+                    - org.apache.poi.poifs.property;version="1.0.2"
+                    - org.apache.poi.hpsf;version="1.0.2"
+                    - org.apache.poi.xwpf.model;version="1.0.2"
+                    - org.apache.poi.hssf;version="1.0.2"
+                    - org.apache.poi.openxml4j.opc;version="1.0.2"
+                    - org.apache.poi.hslf.blip;version="1.0.2"
+                    - org.apache.poi.hpsf.wellknown;version="1.0.2"
+                    - org.apache.poi.openxml4j.opc.signature;version="1.0.2"
+                    - org.apache.poi.ss.formula.constant;version="1.0.2"
+                    - org.apache.poi.xssf.streaming;version="1.0.2"
+                    - org.apache.poi.ss.formula.function;version="1.0.2"
+                    - org.apache.poi.hslf.data;version="1.0.2"
+                    - org.apache.poi.hdf.model.util;version="1.0.2"
+                    - org.apache.poi.ss.usermodel;version="1.0.2"
+                    - org.apache.poi.xssf.usermodel.charts;version="1.0.2"
+                    - org.apache.poi.hssf.record.pivottable;version="1.0.2"
+                    - org.apache.poi.poifs.eventfilesystem;version="1.0.2"
+                    - org.apache.poi.hmef.attribute;version="1.0.2"
+                    - org.apache.poi.ss.formula.eval.forked;version="1.0.2"
+                    - org.apache.poi.hsmf.datatypes;version="1.0.2"
+                    - org.apache.poi.hpbf.model.qcbits;version="1.0.2"
+                    - org.apache.poi.hssf.model;version="1.0.2"
+                    - org.apache.poi.hwpf.sprm;version="1.0.2"
+                    - org.apache.poi.hpbf.extractor;version="1.0.2"
+                    - org.apache.poi.xslf;version="1.0.2"
+                    - org.apache.poi.ss.util.cellwalk;version="1.0.2"
+                    - org.apache.poi.openxml4j.opc.internal;version="1.0.2"
+                    - org.apache.poi.hwpf.dev;version="1.0.2"
+                    - org.apache.poi.xssf.model;version="1.0.2"
+                    - org.apache.poi.ss.formula.atp;version="1.0.2"
+                    - org.apache.poi.hdf.model.hdftypes.definitions;version="1.0.2"
+                    - org.apache.poi.hwpf.extractor;version="1.0.2"
+                    - org.apache.poi.hdf.model;version="1.0.2"
+                    - org.apache.poi.poifs.common;version="1.0.2"
+                    - org.apache.poi.hslf.record;version="1.0.2"
+                    - org.apache.poi.ss.formula;version="1.0.2"
+                    - org.apache.poi.hdgf.chunks;version="1.0.2"
+                    - org.apache.poi.hssf.eventusermodel;version="1.0.2"
+                    - org.apache.poi.hdgf.exceptions;version="1.0.2"
+                    - org.apache.poi.hdgf;version="1.0.2"
+                    - org.apache.poi.ss.formula.functions;version="1.0.2"
+                    - org.apache.poi.hpbf;version="1.0.2"
+                    - org.apache.poi;version="1.0.2"
+                    - org.apache.poi.hwpf.model;version="1.0.2"
+                    - org.apache.poi.sl.usermodel;version="1.0.2"
+                    - org.apache.poi.hwpf.model.io;version="1.0.2"
+                    - org.apache.poi.xssf.util;version="1.0.2"
+                    - org.apache.poi.ss.formula.udf;version="1.0.2"
+                    - org.apache.poi.hsmf.dev;version="1.0.2"
+                    - org.apache.poi.hdf.model.hdftypes;version="1.0.2"
+                    - org.apache.poi.hslf;version="1.0.2"
+                    - org.apache.poi.xssf.usermodel;version="1.0.2"
+                    - org.apache.poi.hssf.util;version="1.0.2"
+                    - org.apache.poi.openxml4j.util;version="1.0.2"
+                    - org.apache.poi.xssf.extractor;version="1.0.2"
+                    - org.apache.poi.hpbf.model;version="1.0.2"
+                    - org.apache.poi.hssf.extractor;version="1.0.2"
+                    - org.apache.poi.openxml4j.opc.internal.unmarshallers;version="1.0.2"
+                    - org.apache.poi.hdgf.extractor;version="1.0.2"
+                    - org.apache.poi.util;version="1.0.2"
+                    - org.apache.poi.hwpf.usermodel;version="1.0.2"
+                    - org.apache.poi.hsmf.extractor;version="1.0.2"
+                    - org.apache.poi.xslf.extractor;version="1.0.2"
+                    - org.apache.poi.hdf.event;version="1.0.2"
+                    - org.apache.poi.ss.formula.ptg;version="1.0.2"
+                    - org.apache.poi.xslf.usermodel;version="1.0.2"
+                    - org.apache.poi.hpsf.extractor;version="1.0.2"
+                    - org.apache.poi.hssf.record.common;version="1.0.2"
+                    - org.apache.poi.openxml4j.opc.internal.signature;version="1.0.2"
+                    - org.apache.poi.xwpf.usermodel;version="1.0.2"
+                    - org.apache.poi.xssf.eventusermodel;version="1.0.2"
+                    - org.apache.poi.hslf.util;version="1.0.2"
+                    - org.apache.poi.hssf.record.aggregates;version="1.0.2"
+                    - org.apache.poi.poifs.dev;version="1.0.2"
+                    - org.apache.poi.hmef.extractor;version="1.0.2"
+                    - org.apache.poi.xssf.usermodel.helpers;version="1.0.2"
+                    - org.apache.poi.poifs.nio;version="1.0.2"
+                    - org.apache.poi.hssf.eventmodel;version="1.0.2"
+                    - org.apache.poi.hwpf;version="1.0.2"
+                    - org.apache.poi.hssf.dev;version="1.0.2"
+                    - org.apache.poi.hsmf.parsers;version="1.0.2"
+                    - org.apache.poi.hslf.model;version="1.0.2"
+                    - org.apache.poi.common.usermodel;version="1.0.2"
+                    - org.apache.poi.ss.formula.eval;version="1.0.2"
+                    - org.apache.poi.ss.util;version="1.0.2"
+                    - org.apache.poi.xssf.usermodel.extensions;version="1.0.2"
+                    - org.apache.poi.xwpf.extractor;version="1.0.2"
+                    - org.apache.poi.hssf.record.cont;version="1.0.2"
+                    - org.apache.poi.dev;version="1.0.2"
+                    - org.apache.poi.hdf.extractor.util;version="1.0.2"
+                    - org.apache.poi.hssf.converter;version="1.0.2"
+                    - org.apache.poi.hdgf.pointers;version="1.0.2"
+                    - org.apache.poi.ss.usermodel.charts;version="1.0.2"
+                    - org.apache.poi.hsmf.exceptions;version="1.0.2"
+                    - org.apache.poi.hmef.dev;version="1.0.2"
+                    - org.apache.poi.hssf.record.crypto;version="1.0.2"
+                    - org.apache.poi.hssf.eventusermodel.dummyrecord;version="1.0.2"
+                    - org.apache.poi.openxml4j.opc.internal.marshallers;version="1.0.2"
+                    - org.apache.poi.hwpf.converter;version="1.0.2"
+                    - org.apache.poi.poifs.crypt;version="1.0.2"
+                    - org.apache.poi.hdgf.streams;version="1.0.2"
+                    - org.apache.poi.hsmf;version="1.0.2"
+                    - org.apache.poi.hslf.exceptions;version="1.0.2"
+                    - org.apache.poi.hssf.usermodel;version="1.0.2"
+                    - org.apache.poi.hslf.extractor;version="1.0.2"
+                    - org.apache.poi.hpbf.dev;version="1.0.2"
+                    - org.apache.poi.xssf.dev;version="1.0.2"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.replication.core</artifactId>
+                <version>5.5.18</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.replication;version="5.5.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.security.user</artifactId>
+                <version>0.0.14</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.adobe.granite.security.user.util
+                    - com.adobe.granite.security.user.impl
+                    - com.adobe.granite.security.user.servlets
+                    - com.adobe.granite.security.user
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.tagsoup</artifactId>
+                <version>1.2.1</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.ccil.cowan.tagsoup;version="1.2.1"
+                    - org.ccil.cowan.tagsoup.jaxp;version="1.2.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.ui.commons</artifactId>
+                <version>5.5.14</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.widget;version="5.5.0"
+                    - com.day.cq.theme;version="5.4.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite</groupId>
+                <artifactId>com.adobe.granite.xssprotection</artifactId>
+                <version>5.5.14</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.adobe.granite.xss;version="1.0.0"
+                    - com.day.cq.xss;version="5.4.0"
+                    - com.day.cq.xss.taglib;version="5.4.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite.bundles</groupId>
+                <artifactId>json</artifactId>
+                <version>20090211_1</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.json;version=20090211
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.granite.sling</groupId>
+                <artifactId>org.apache.sling.jcr.resource</artifactId>
+                <version>2.1.1-B002</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.jcr.resource;version="2.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.sharedcloud.worker.XMPFilesProcessor</groupId>
+                <artifactId>com.adobe.sharedcloud.worker.XMPFilesProcessor.java</artifactId>
+                <version>2.0.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.adobe.sharedcloud.worker.xmpfiles.ncomm;version="2.0.8"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.suitetech</groupId>
+                <artifactId>com.adobe.suitetech.nativecomm</artifactId>
+                <version>2.0.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.adobe.octopus.extract;version="2.0.8"
+                    - com.adobe.versioncue.nativecomm;version="2.0.8"
+                    - com.adobe.versioncue.nativecomm.hook;version="2.0.8"
+                    - com.adobe.versioncue.nativecomm.host;version="2.0.8"
+                    - com.adobe.versioncue.nativecomm.io;version="2.0.8"
+                    - com.adobe.versioncue.nativecomm.msg;version="2.0.8"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons</groupId>
+                <artifactId>day-commons-diff</artifactId>
+                <version>1.1.3</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.util.diff;version="1.0.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons</groupId>
+                <artifactId>day-commons-durbo</artifactId>
+                <version>2.1.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.durbo;version="2.1.0"
+                    - com.day.durbo.io;version="2.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons</groupId>
+                <artifactId>day-commons-gfx</artifactId>
+                <version>2.1.10</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.image;version="1.0"
+                    - com.day.image.font;version="1.0"
+                    - com.day.imageio.plugins;version="1.0"
+                    - ch.randelshofer.io;version="1.0"
+                    - ch.randelshofer.media.jpeg;version="1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons</groupId>
+                <artifactId>day-commons-io</artifactId>
+                <version>1.1.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.io;version="1.1.3"
+                    - com.day.io.file;version="1.1.3"
+                    - com.day.io.disk;version="1.1.3"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons</groupId>
+                <artifactId>day-commons-jstl</artifactId>
+                <version>1.1.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.taglibs.standard.tag.common.core
+                    - org.apache.taglibs.standard.lang.jstl.parser
+                    - org.apache.taglibs.standard.tlv
+                    - org.apache.taglibs.standard
+                    - javax.servlet.jsp.jstl.tlv
+                    - org.apache.taglibs.standard.functions
+                    - org.apache.taglibs.standard.tag.common.sql
+                    - org.apache.taglibs.standard.tei
+                    - javax.servlet.jsp.jstl.fmt
+                    - javax.servlet.jsp.jstl.core
+                    - org.apache.taglibs.standard.lang.jstl.test.beans
+                    - org.apache.taglibs.standard.tag.el.fmt
+                    - org.apache.taglibs.standard.resources
+                    - org.apache.taglibs.standard.tag.el.sql
+                    - org.apache.taglibs.standard.tag.common.fmt
+                    - org.apache.taglibs.standard.tag.rt.fmt
+                    - org.apache.taglibs.standard.lang.support
+                    - org.apache.taglibs.standard.tag.rt.sql
+                    - org.apache.taglibs.standard.lang.jstl
+                    - org.apache.taglibs.standard.tag.rt.core
+                    - javax.servlet.jsp.jstl.sql
+                    - org.apache.taglibs.standard.tag.el.core
+                    - org.apache.taglibs.standard.lang.jstl.test
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons</groupId>
+                <artifactId>day-commons-misc</artifactId>
+                <version>1.1.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.util;version="1.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons</groupId>
+                <artifactId>day-commons-text</artifactId>
+                <version>1.1.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.text;version="1.1.4"
+                    - com.day.text.csv;version="1.1.4"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons</groupId>
+                <artifactId>day.commons.datasource.jdbcpool</artifactId>
+                <version>1.0.22</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.commons.datasource.jdbcpool
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons</groupId>
+                <artifactId>day.commons.datasource.poolservice</artifactId>
+                <version>1.0.10</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.commons.datasource.poolservice;version="1.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons.osgi.wrapper</groupId>
+                <artifactId>com.day.commons.osgi.wrapper.commons-email</artifactId>
+                <version>1.2.0-0002</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.mail;version="1.2"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons.osgi.wrapper</groupId>
+                <artifactId>com.day.commons.osgi.wrapper.commons-httpclient</artifactId>
+                <version>3.1.0.018</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.httpclient.protocol;version="3.1"
+                    - org.apache.commons.httpclient.auth;version="3.1"
+                    - org.apache.commons.httpclient.methods;version="3.1"
+                    - org.apache.commons.httpclient.cookie;version="3.1"
+                    - org.apache.commons.httpclient.params;version="3.1"
+                    - org.apache.commons.httpclient.methods.multipart;version="3.1"
+                    - org.apache.commons.httpclient.util;version="3.1"
+                    - org.apache.commons.httpclient;version="3.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons.osgi.wrapper</groupId>
+                <artifactId>com.day.commons.osgi.wrapper.commons-lang2</artifactId>
+                <version>2.5-0001</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.lang.enum;version="2.5"
+                    - org.apache.commons.lang.enums;version="2.5"
+                    - org.apache.commons.lang.builder;version="2.5"
+                    - org.apache.commons.lang.time;version="2.5"
+                    - org.apache.commons.lang.exception;version="2.5"
+                    - org.apache.commons.lang.mutable;version="2.5"
+                    - org.apache.commons.lang.reflect;version="2.5"
+                    - org.apache.commons.lang.text;version="2.5"
+                    - org.apache.commons.lang;version="2.5"
+                    - org.apache.commons.lang.math;version="2.5"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons.osgi.wrapper</groupId>
+                <artifactId>com.day.commons.osgi.wrapper.fop</artifactId>
+                <version>0.95-0002</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.fop.apps;version="0.95"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons.osgi.wrapper</groupId>
+                <artifactId>com.day.commons.osgi.wrapper.joda-time</artifactId>
+                <version>1.6-0002</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.joda.time.tz.data.Pacific;version="1.6"
+                    - org.joda.time.tz.data.Etc;version="1.6"
+                    - org.joda.time.tz.data.America.Kentucky;version="1.6"
+                    - org.joda.time.tz.data.America.Argentina;version="1.6"
+                    - org.joda.time.base;version="1.6"
+                    - org.joda.time.tz.data;version="1.6"
+                    - org.joda.time.chrono;version="1.6"
+                    - org.joda.time.tz;version="1.6"
+                    - org.joda.time.tz.data.Antarctica;version="1.6"
+                    - org.joda.time.tz.data.Europe;version="1.6"
+                    - org.joda.time.tz.data.America.Indiana;version="1.6"
+                    - org.joda.time.tz.data.America.North_Dakota;version="1.6"
+                    - org.joda.time.convert;version="1.6"
+                    - org.joda.time.tz.data.Asia;version="1.6"
+                    - org.joda.time.tz.data.Indian;version="1.6"
+                    - org.joda.time.field;version="1.6"
+                    - org.joda.time;version="1.6"
+                    - org.joda.time.format;version="1.6"
+                    - org.joda.time.tz.data.Africa;version="1.6"
+                    - org.joda.time.tz.data.Australia;version="1.6"
+                    - org.joda.time.tz.data.Atlantic;version="1.6"
+                    - org.joda.time.tz.data.America;version="1.6"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons.osgi.wrapper</groupId>
+                <artifactId>com.day.commons.osgi.wrapper.mail</artifactId>
+                <version>1.4.0-0001</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.sun.mail.pop3;version="1.4"
+                    - javax.mail.search;version="1.4"
+                    - com.sun.mail.smtp;version="1.4"
+                    - javax.mail.util;version="1.4"
+                    - javax.mail.event;version="1.4"
+                    - javax.activation;version="1.1"
+                    - javax.mail.internet;version="1.4"
+                    - com.sun.mail.imap;version="1.4"
+                    - javax.mail;version="1.4"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.commons.osgi.wrapper</groupId>
+                <artifactId>com.day.commons.osgi.wrapper.svnkit</artifactId>
+                <version>1.3.0.5847-0002</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - de.regnis.q.sequence.line.diff;version="1.3.0.5847"
+                    - de.regnis.q.sequence;version="1.3.0.5847"
+                    - org.tmatesoft.svn.util;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.wc.xml;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.io.fs;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.util;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.wc.config;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.io;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.delta;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.io.dav.http;version="1.3.0.5847"
+                    - de.regnis.q.sequence.line;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.wc.xml.schema;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.replicator;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.javahl;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.wc.admin;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.auth;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.io.dav.handlers;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.io.repository;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.io.diff;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.wc.xml.dtd;version="1.3.0.5847"
+                    - de.regnis.q.sequence.media;version="1.3.0.5847"
+                    - de.regnis.q.sequence.line.simplifier;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.io.dav;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.wc;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.wc.admin;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.io.svn;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.util.jna;version="1.3.0.5847"
+                    - de.regnis.q.sequence.core;version="1.3.0.5847"
+                    - org.tmatesoft.svn.core.internal.wc;version="1.3.0.5847"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-activitystreams-api</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.activitystreams.api
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-analytics</artifactId>
+                <version>5.5.18</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.analytics
+                    - com.day.cq.analytics.sitecatalyst
+                    - com.day.cq.analytics.sitecatalyst.util
+                    - com.day.cq.analytics.sitecatalyst.rsmerger
+                    - com.day.cq.analytics.testandtarget
+                    - com.day.cq.analytics.testandtarget.util
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-apns-client</artifactId>
+                <version>0.1.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.notnoop.apns
+                    - com.notnoop.apns.internal
+                    - com.notnoop.exceptions
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-apns-core</artifactId>
+                <version>5.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.apns
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-audit</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.audit
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-chart</artifactId>
+                <version>5.3.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.graphics
+                    - com.day.cq.graphics.chart
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-commons</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.commons
+                    - com.day.cq.commons.date
+                    - com.day.cq.commons.feed
+                    - com.day.cq.commons.inherit
+                    - com.day.cq.commons.jcr
+                    - com.day.cq.commons.mail
+                    - com.day.cq.commons.predicate
+                    - com.day.cq.commons.servlets
+                    - com.day.cq.commons.thumbnail
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-compat-codeupgrade</artifactId>
+                <version>1.2.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.compat.codeupgrade;version="1.2.2"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-compat-commons-auth</artifactId>
+                <version>0.1.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.commons.auth;version="1.0"
+                    - org.apache.sling.commons.auth.spi;version="1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-compat-core</artifactId>
+                <version>1.0.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.compat.core;version="1.0.8"
+                    - com.day.cq.config
+                    - com.day.cq.contentbus.util
+                    - com.day.cq.contentbus
+                    - com.day.cq.contentbus.core
+                    - com.day.cq.contentbus.observation
+                    - com.day.cq.contentbus.service
+                    - com.day.xml
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-compat-migration</artifactId>
+                <version>1.1.10</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.compat.migration;version="1.1"
+                    - com.day.cq.compat.migration.contentbus;version="1.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-compat-runmode</artifactId>
+                <version>0.2.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.runmode
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-connector</artifactId>
+                <version>5.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.connector
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-content-sync</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.contentsync
+                    - com.day.cq.contentsync.config
+                    - com.day.cq.contentsync.handler
+                    - com.day.cq.contentsync.handler.util
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-jobs-core</artifactId>
+                <version>5.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.jobs.core
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-mailer</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.mailer
+                    - com.day.cq.mailer.email
+                    - com.day.cq.mailer.commons
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-opensocial</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.opensocial
+                    - com.day.cq.opensocial.common
+                    - com.day.cq.opensocial.gadgets.servlet
+                    - com.day.cq.opensocial.modules
+                    - com.day.cq.opensocial.protocol
+                    - com.day.cq.opensocial.spi
+                    - com.day.cq.shindig
+                    - com.day.cq.shindig.gadgets
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-personalization</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.personalization
+                    - com.day.cq.personalization.tags
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-pinauthhandler</artifactId>
+                <version>0.1.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.auth.pin;version="0.1.2"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-polling-importer</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.polling.importer
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-reporting</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.reporting
+                    - com.day.cq.reporting.helpers
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-retriever</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.retriever
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-rewriter</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.rewriter.linkchecker
+                    - com.day.cq.rewriter.pipeline
+                    - com.day.cq.rewriter.htmlparser
+                    - com.day.cq.rewriter.processor
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-search</artifactId>
+                <version>5.5.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.search
+                    - com.day.cq.search.eval
+                    - com.day.cq.search.facets
+                    - com.day.cq.search.facets.buckets
+                    - com.day.cq.search.facets.extractors
+                    - com.day.cq.search.result
+                    - com.day.cq.search.writer
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-searchpromote</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.searchpromote
+                    - com.day.cq.searchpromote.xml
+                    - com.day.cq.searchpromote.xml.form
+                    - com.day.cq.searchpromote.xml.result
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-security</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.security.util
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-security-api</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.security
+                    - com.day.cq.security.privileges
+                    - com.day.cq.security.resource
+                    - com.day.cq.security.profile
+                    - com.day.cq.preferences
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-spellchecker</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.spellchecker
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-statistics</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.statistics
+                    - com.day.cq.statistics.util
+                    - com.day.crx.statistics
+                    - com.day.crx.statistics.result
+                    - com.day.crx.statistics.loader
+                    - com.day.crx.statistics.query
+                    - com.day.crx.statistics.keyword
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-tagging</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.tagging
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq</groupId>
+                <artifactId>cq-widgets-ext</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.extwidget
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.collab</groupId>
+                <artifactId>cq-collab-blog</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.collab.blog
+                    - com.day.cq.collab.blog.antispam
+                    - com.day.cq.collab.blog.antispam.process
+                    - com.day.cq.collab.blog.search
+                    - com.day.cq.collab.blog.search.process
+                    - com.day.cq.collab.blog.trackback
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.collab</groupId>
+                <artifactId>cq-collab-calendar</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.collab.calendar
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.collab</groupId>
+                <artifactId>cq-collab-commons</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.collab.commons
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.collab</groupId>
+                <artifactId>cq-collab-forum</artifactId>
+                <version>5.5.18</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.collab.forum.api
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.collab</groupId>
+                <artifactId>cq-collab-wiki</artifactId>
+                <version>5.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.collab.wiki
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.collab</groupId>
+                <artifactId>cq-collab-wiki-api</artifactId>
+                <version>5.3.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.collab.wiki.api.util
+                    - com.day.cq.collab.wiki.api
+                    - com.day.cq.collab.wiki.api.plugins
+                    - com.day.cq.collab.wiki.api.parser
+                    - com.day.cq.collab.wiki.api.dom
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.dam</groupId>
+                <artifactId>adobe-xmp</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.adobe.xmp
+                    - com.adobe.xmp.options
+                    - com.adobe.xmp.properties
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.dam</groupId>
+                <artifactId>cq-dam-api</artifactId>
+                <version>5.5.12</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.dam.api;version="0.1"
+                    - com.day.cq.dam.api.cache;version="0.1"
+                    - com.day.cq.dam.api.handler;version="0.1"
+                    - com.day.cq.dam.api.handler.store;version="0.1"
+                    - com.day.cq.dam.api.metadata;version="0.1"
+                    - com.day.cq.dam.api.metadata.xmp;version="0.1"
+                    - com.day.cq.dam.api.thumbnail;version="0.1"
+                    - com.day.cq.dam.api.lightbox;version="0.1"
+                    - com.day.cq.dam.api.handler.xmp;version="0.1"
+                    - com.day.cq.dam.api.proxy;version="0.1"
+                    - com.day.cq.dam.api.proxy.client;version="0.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.dam</groupId>
+                <artifactId>cq-dam-commons</artifactId>
+                <version>5.5.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.dam.commons.handler
+                    - com.day.cq.dam.commons.metadata
+                    - com.day.cq.dam.commons.process
+                    - com.day.cq.dam.commons.thumbnail
+                    - com.day.cq.dam.commons.thumbnail.provider
+                    - com.day.cq.dam.commons.util
+                    - com.day.cq.dam.commons.proxy
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.dam</groupId>
+                <artifactId>cq-dam-core</artifactId>
+                <version>5.5.36</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.dam.core
+                    - com.day.cq.dam.core.process
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.dam</groupId>
+                <artifactId>cq-dam-creativecloud</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.dam.creativecloud
+                    - com.day.cq.dam.creativecloud.handler
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.dam</groupId>
+                <artifactId>cq-dam-handler</artifactId>
+                <version>5.5.16</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.dam.handler.gibson.fontmanager
+                    - com.day.cq.dam.handler.gibson.pdf
+                    - com.day.cq.dam.handler.standard.helper.imageinfo
+                    - com.day.cq.dam.handler.standard.keynote
+                    - com.day.cq.dam.handler.standard.mp3
+                    - com.day.cq.dam.handler.standard.msoffice
+                    - com.day.cq.dam.handler.standard.msoffice.wmf
+                    - com.day.cq.dam.handler.standard.ooxml
+                    - com.day.cq.dam.handler.standard.pdf
+                    - com.day.cq.dam.handler.standard.pict
+                    - com.day.cq.dam.handler.standard.psd
+                    - com.day.cq.dam.handler.standard.zip
+                    - com.twelvemonkeys.imageio.plugins.psd
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.dam</groupId>
+                <artifactId>cq-dam-indesign</artifactId>
+                <version>5.5.12</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.dam.indd
+                    - com.day.cq.dam.indd.impl.handler
+                    - com.day.cq.dam.indd.process
+                    - com.day.cq.dam.indd.impl.idml
+                    - com.day.cq.dam.indd.impl.pagebuilder
+                    - com.day.cq.dam.indd.impl.servlet
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.dam</groupId>
+                <artifactId>cq-dam-scene7</artifactId>
+                <version>5.5.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.dam.scene7
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.dam</groupId>
+                <artifactId>cq-dam-video</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.dam.handler.ffmpeg
+                    - com.day.cq.dam.video
+                    - com.day.cq.dam.video.servlet
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.dam.commons</groupId>
+                <artifactId>com.day.cq.dam.commons.nekohtml</artifactId>
+                <version>0.9.5-0005</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.dam.html
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.mcm</groupId>
+                <artifactId>cq-mcm-core</artifactId>
+                <version>5.5.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.mcm.core
+                    - com.day.cq.mcm.api
+                    - com.day.cq.mcm.api.newsletter
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-geometrixx-outdoors-core</artifactId>
+                <version>1.0.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - info.geometrixx.outdoors.core.product
+                    - info.geometrixx.outdoors.core.util
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-msm-api</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.msm.api;version="5.5.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-api</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.api
+                    - com.day.cq.wcm.api.designer
+                    - com.day.cq.wcm.api.components
+                    - com.day.cq.wcm.api.commands
+                    - com.day.cq.wcm.api.msm;version="5.3.11"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-commons</artifactId>
+                <version>5.5.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.commons.search
+                    - com.day.cq.wcm.commons
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-content-sync</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.contentsync
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-core</artifactId>
+                <version>5.5.36</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.core.mvt
+                    - com.day.cq.wcm.core.stats
+                    - com.day.cq.wcm.core.contentfinder
+                    - com.day.cq.wcm.core.components
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-emulator</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.emulator
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-foundation</artifactId>
+                <version>5.5.16</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.foundation
+                    - com.day.cq.wcm.foundation.forms
+                    - com.day.cq.wcm.foundation.profile
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-geometrixx</artifactId>
+                <version>5.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.apps.geometrixx
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-mobile-api</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.mobile.api
+                    - com.day.cq.wcm.mobile.api.device
+                    - com.day.cq.wcm.mobile.api.device.capability
+                    - com.day.cq.wcm.mobile.api.devicespecs
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-mobile-core</artifactId>
+                <version>5.5.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.mobile.core
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-newsletter</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.newsletter
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-notification</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.notification
+                    - com.day.cq.wcm.notification.email
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-offline</artifactId>
+                <version>5.3.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.offline
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-siteimporter</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.siteimporter
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-taglib</artifactId>
+                <version>5.5.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.tags
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-undo</artifactId>
+                <version>5.5.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.undo
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-webservice-support</artifactId>
+                <version>5.5.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.webservicesupport
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-workflow</artifactId>
+                <version>5.5.10</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.workflow.process
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-workflow-api</artifactId>
+                <version>5.3.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.wcm.workflow.api
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.workflow</groupId>
+                <artifactId>cq-workflow-api</artifactId>
+                <version>5.5.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.workflow
+                    - com.day.cq.workflow.job
+                    - com.day.cq.workflow.exec
+                    - com.day.cq.workflow.exec.filter
+                    - com.day.cq.workflow.model
+                    - com.day.cq.workflow.event
+                    - com.day.cq.workflow.rule
+                    - com.day.cq.workflow.statistics
+                    - com.day.cq.workflow.status
+                    - com.day.cq.workflow.collection
+                    - com.day.cq.workflow.collection.util
+                    - com.day.cq.workflow.ui
+                    - com.day.cq.workflow.metadata
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.workflow</groupId>
+                <artifactId>cq-workflow-console</artifactId>
+                <version>5.5.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.workflow.filter
+                    - com.day.cq.workflow.launcher
+                    - com.day.cq.workflow.predicate
+                    - com.day.cq.workflow.timeout.autoadvance
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cq.workflow</groupId>
+                <artifactId>cq-workflow-impl</artifactId>
+                <version>5.5.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.cq.workflow.advance
+                    - com.day.cq.workflow.rule.admin
+                    - com.day.cq.workflow.serialization
+                    - com.day.cq.workflow.util
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.cqse</groupId>
+                <artifactId>cqse-httpservice</artifactId>
+                <version>4.1.32</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.felix.http.api;version="2.0.4"
+                    - org.osgi.service.http;version="1.2"
+                    - javax.servlet.resources;version="2.5"
+                    - javax.servlet;version="2.5"
+                    - javax.servlet.http;version="2.5"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.crx</groupId>
+                <artifactId>crx-api</artifactId>
+                <version>2.3.15</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.crx.query;version="2.3"
+                    - com.day.crx.io;version="2.3"
+                    - com.day.crx;version="2.3"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.crx</groupId>
+                <artifactId>crx-scm-integration</artifactId>
+                <version>2.3.11</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.crx.scm.svn
+                    - com.day.crx.scm.vlt
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.crx.sling</groupId>
+                <artifactId>com.day.crx.sling.server</artifactId>
+                <version>2.3.26</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.crx.sling.server.jmx;version="1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.crx.sling</groupId>
+                <artifactId>crx-auth-token</artifactId>
+                <version>2.4.13</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.crx.security.token;version="1.0.2"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>com.day.jcr.vault</groupId>
+                <artifactId>com.day.jcr.vault</artifactId>
+                <version>2.4.22</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - com.day.jcr.vault.fs;version="2.4.0"
+                    - com.day.jcr.vault.fs.api;version="2.4.0"
+                    - com.day.jcr.vault.fs.spi;version="2.4.0"
+                    - com.day.jcr.vault.fs.config;version="2.4.0"
+                    - com.day.jcr.vault.fs.filter;version="2.4.0"
+                    - com.day.jcr.vault.fs.io;version="2.4.0"
+                    - com.day.jcr.vault.util.xml.xerces.xni.parser;version="2.4.0"
+                    - com.day.jcr.vault.util.xml.xerces.util;version="2.4.0"
+                    - com.day.jcr.vault.util.xml.xerces.xni;version="2.4.0"
+                    - com.day.jcr.vault.util.xml.serialize;version="2.4.0"
+                    - com.day.jcr.vault.util.xml.xerces.dom;version="2.4.0"
+                    - com.day.jcr.vault.util;version="2.4.0"
+                    - com.day.jcr.vault.packaging;version="2.4.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>1.5</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.codec;version="1.5"
+                    - org.apache.commons.codec.net;version="1.5"
+                    - org.apache.commons.codec.language;version="1.5"
+                    - org.apache.commons.codec.digest;version="1.5"
+                    - org.apache.commons.codec.binary;version="1.5"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>3.2.1</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.collections.map;version="3.2.1"
+                    - org.apache.commons.collections.buffer;version="3.2.1"
+                    - org.apache.commons.collections.comparators;version="3.2.1"
+                    - org.apache.commons.collections.collection;version="3.2.1"
+                    - org.apache.commons.collections.bag;version="3.2.1"
+                    - org.apache.commons.collections.iterators;version="3.2.1"
+                    - org.apache.commons.collections.bidimap;version="3.2.1"
+                    - org.apache.commons.collections.set;version="3.2.1"
+                    - org.apache.commons.collections.functors;version="3.2.1"
+                    - org.apache.commons.collections.list;version="3.2.1"
+                    - org.apache.commons.collections.keyvalue;version="3.2.1"
+                    - org.apache.commons.collections;version="3.2.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>1.2.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.fileupload.util;version="1.2.2"
+                    - org.apache.commons.fileupload.disk;version="1.2.2"
+                    - org.apache.commons.fileupload;version="1.2.2"
+                    - org.apache.commons.fileupload.servlet;version="1.2.2"
+                    - org.apache.commons.fileupload.portlet;version="1.2.2"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>1.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.io;version=1.4
+                    - org.apache.commons.io.comparator;version=1.4
+                    - org.apache.commons.io.filefilter;version=1.4
+                    - org.apache.commons.io.input;version=1.4
+                    - org.apache.commons.io.output;version=1.4
+                -->
+            </dependency>
+            <dependency>
+                <groupId>javax.jcr</groupId>
+                <artifactId>jcr</artifactId>
+                <version>2.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - javax.jcr.lock;version="2.0"
+                    - javax.jcr.retention;version="2.0"
+                    - javax.jcr.security;version="2.0"
+                    - javax.jcr.query;version="2.0"
+                    - javax.jcr.observation;version="2.0"
+                    - javax.jcr.version;version="2.0"
+                    - javax.jcr.nodetype;version="2.0"
+                    - javax.jcr.query.qom;version="2.0"
+                    - javax.jcr;version="2.0"
+                    - javax.jcr.util;version="2.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>net.distilledcode</groupId>
+                <artifactId>artifx</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - net.distilledcode.artifx.api;version="0.0.1.SNAPSHOT"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.abdera</groupId>
+                <artifactId>abdera-client</artifactId>
+                <version>1.0-R783018</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.abdera.protocol.client;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.client.util;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.client.cache;version="1.0.0.R783018"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.abdera</groupId>
+                <artifactId>abdera-core</artifactId>
+                <version>1.0-R783018</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.abdera.factory;version="1.0.0.R783018"
+                    - org.apache.abdera.model;version="1.0.0.R783018"
+                    - org.apache.abdera.writer;version="1.0.0.R783018"
+                    - org.apache.abdera.xpath;version="1.0.0.R783018"
+                    - org.apache.abdera.filter;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.util;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.error;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol;version="1.0.0.R783018"
+                    - org.apache.abdera.util.filter;version="1.0.0.R783018"
+                    - org.apache.abdera.util;version="1.0.0.R783018"
+                    - org.apache.abdera;version="1.0.0.R783018"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.abdera</groupId>
+                <artifactId>abdera-extensions-media</artifactId>
+                <version>1.0-R783018</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.abdera.ext.media;version="1.0.0.R783018"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.abdera</groupId>
+                <artifactId>abdera-extensions-opensearch</artifactId>
+                <version>1.0-R783018</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.abdera.ext.opensearch.server;version="1.0.0.R783018"
+                    - org.apache.abdera.ext.opensearch.server.processors;version="1.0.0.R783018"
+                    - org.apache.abdera.ext.opensearch.server.impl;version="1.0.0.R783018"
+                    - org.apache.abdera.ext.opensearch;version="1.0.0.R783018"
+                    - org.apache.abdera.ext.opensearch.model;version="1.0.0.R783018"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.abdera</groupId>
+                <artifactId>abdera-i18n</artifactId>
+                <version>1.0-R783018</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.abdera.i18n.text.data;version="1.0.0.R783018"
+                    - org.apache.abdera.i18n.unicode.data;version="1.0.0.R783018"
+                    - org.apache.abdera.i18n.templates;version="1.0.0.R783018"
+                    - org.apache.abdera.i18n.iri;version="1.0.0.R783018"
+                    - org.apache.abdera.i18n.text;version="1.0.0.R783018"
+                    - org.apache.abdera.i18n.text.io;version="1.0.0.R783018"
+                    - org.apache.abdera.i18n.rfc4646.enums;version="1.0.0.R783018"
+                    - org.apache.abdera.i18n.lang;version="1.0.0.R783018"
+                    - org.apache.abdera.i18n.iri.data;version="1.0.0.R783018"
+                    - org.apache.abdera.i18n.rfc4646;version="1.0.0.R783018"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.abdera</groupId>
+                <artifactId>abdera-parser</artifactId>
+                <version>1.0-R783018</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.abdera.parser;version="1.0.0.R783018"
+                    - org.apache.abdera.parser.stax;version="1.0.0.R783018"
+                    - org.apache.abdera.parser.stax.util;version="1.0.0.R783018"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.abdera</groupId>
+                <artifactId>abdera-server</artifactId>
+                <version>1.0-R783018</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.abdera.protocol.server.multipart;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.server.impl;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.server.provider.managed;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.server.processors;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.server.provider.basic;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.server.filters;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.server.servlet;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.server.context;version="1.0.0.R783018"
+                    - org.apache.abdera.protocol.server;version="1.0.0.R783018"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.aries</groupId>
+                <artifactId>org.apache.aries.util</artifactId>
+                <version>0.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.aries.util;version="0.4"
+                    - org.apache.aries.util.tracker;version="0.4.0"
+                    - org.apache.aries.util.nls;version="0.3.0"
+                    - org.apache.aries.util.io;version="0.1.0"
+                    - org.apache.aries.util.service.registry;version="0.1.0"
+                    - org.apache.aries.util.manifest;version="0.1"
+                    - org.apache.aries.util.filesystem;version="0.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.aries.jmx</groupId>
+                <artifactId>org.apache.aries.jmx.api</artifactId>
+                <version>0.3</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.osgi.jmx;version="1.0.0"
+                    - org.osgi.jmx.framework;version="1.5.0"
+                    - org.osgi.jmx.service.cm;version="1.3.0"
+                    - org.osgi.jmx.service.permissionadmin;version="1.2.0"
+                    - org.osgi.jmx.service.provisioning;version="1.2.0"
+                    - org.osgi.jmx.service.useradmin;version="1.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.aries.jmx</groupId>
+                <artifactId>org.apache.aries.jmx.core</artifactId>
+                <version>0.3.1-R1227545</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.aries.jmx.codec;version="0.3.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.aries.transaction</groupId>
+                <artifactId>org.apache.aries.transaction.manager</artifactId>
+                <version>0.3.1-R1229964</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.geronimo.transaction.log;version="2.2.1"
+                    - org.apache.geronimo.transaction.manager;version="2.2.1"
+                    - org.apache.geronimo.transaction;version="2.2.1"
+                    - javax.transaction;version="1.1.0"
+                    - javax.transaction.xa;version="1.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cocoon</groupId>
+                <artifactId>cocoon-xml</artifactId>
+                <version>2.0.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.cocoon.xml.dom;version="2.0"
+                    - org.apache.cocoon.xml.sax;version="2.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-exec</artifactId>
+                <version>1.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.exec.util;version="1.0"
+                    - org.apache.commons.exec.launcher;version="1.0"
+                    - org.apache.commons.exec;version="1.0"
+                    - org.apache.commons.exec.environment;version="1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.0.1</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.lang3.concurrent;version="3.0.1"
+                    - org.apache.commons.lang3.event;version="3.0.1"
+                    - org.apache.commons.lang3.mutable;version="3.0.1"
+                    - org.apache.commons.lang3.text.translate;version="3.0.1"
+                    - org.apache.commons.lang3.text;version="3.0.1"
+                    - org.apache.commons.lang3.tuple;version="3.0.1"
+                    - org.apache.commons.lang3.math;version="3.0.1"
+                    - org.apache.commons.lang3;version="3.0.1"
+                    - org.apache.commons.lang3.exception;version="3.0.1"
+                    - org.apache.commons.lang3.reflect;version="3.0.1"
+                    - org.apache.commons.lang3.builder;version="3.0.1"
+                    - org.apache.commons.lang3.time;version="3.0.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math</artifactId>
+                <version>2.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.math.analysis.interpolation;version="2.2"
+                    - org.apache.commons.math.dfp;version="2.2"
+                    - org.apache.commons.math.special;version="2.2"
+                    - org.apache.commons.math.util;version="2.2"
+                    - org.apache.commons.math.analysis;version="2.2"
+                    - org.apache.commons.math.stat.descriptive;version="2.2"
+                    - org.apache.commons.math.stat.regression;version="2.2"
+                    - org.apache.commons.math.stat.correlation;version="2.2"
+                    - org.apache.commons.math.stat.clustering;version="2.2"
+                    - org.apache.commons.math.ode.jacobians;version="2.2"
+                    - org.apache.commons.math.stat.ranking;version="2.2"
+                    - org.apache.commons.math;version="2.2"
+                    - org.apache.commons.math.ode.sampling;version="2.2"
+                    - org.apache.commons.math.genetics;version="2.2"
+                    - org.apache.commons.math.analysis.polynomials;version="2.2"
+                    - org.apache.commons.math.exception.util;version="2.2"
+                    - org.apache.commons.math.optimization.linear;version="2.2"
+                    - org.apache.commons.math.ode.nonstiff;version="2.2"
+                    - org.apache.commons.math.optimization.univariate;version="2.2"
+                    - org.apache.commons.math.optimization.direct;version="2.2"
+                    - org.apache.commons.math.optimization.general;version="2.2"
+                    - org.apache.commons.math.stat;version="2.2"
+                    - org.apache.commons.math.distribution;version="2.2"
+                    - org.apache.commons.math.ode.events;version="2.2"
+                    - org.apache.commons.math.stat.descriptive.summary;version="2.2"
+                    - org.apache.commons.math.geometry;version="2.2"
+                    - org.apache.commons.math.linear;version="2.2"
+                    - org.apache.commons.math.estimation;version="2.2"
+                    - org.apache.commons.math.analysis.integration;version="2.2"
+                    - org.apache.commons.math.stat.descriptive.rank;version="2.2"
+                    - org.apache.commons.math.random;version="2.2"
+                    - org.apache.commons.math.fraction;version="2.2"
+                    - org.apache.commons.math.complex;version="2.2"
+                    - org.apache.commons.math.transform;version="2.2"
+                    - org.apache.commons.math.stat.inference;version="2.2"
+                    - org.apache.commons.math.optimization.fitting;version="2.2"
+                    - org.apache.commons.math.exception;version="2.2"
+                    - org.apache.commons.math.optimization;version="2.2"
+                    - org.apache.commons.math.ode;version="2.2"
+                    - org.apache.commons.math.stat.descriptive.moment;version="2.2"
+                    - org.apache.commons.math.analysis.solvers;version="2.2"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-sanselan</artifactId>
+                <version>1.0-R1332129</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.sanselan.formats.ico
+                    - org.apache.commons.sanselan.formats.bmp.writers
+                    - org.apache.commons.sanselan.formats.jpeg.xmp
+                    - org.apache.commons.sanselan.formats.transparencyfilters
+                    - org.apache.commons.sanselan
+                    - org.apache.commons.sanselan.formats.tiff.write
+                    - org.apache.commons.sanselan.color
+                    - org.apache.commons.sanselan.formats.png.chunks
+                    - org.apache.commons.sanselan.formats.psd
+                    - org.apache.commons.sanselan.formats.jpeg.segments
+                    - org.apache.commons.sanselan.formats.tiff.taginfos
+                    - org.apache.commons.sanselan.formats.tiff.datareaders
+                    - org.apache.commons.sanselan.common.itu_t4
+                    - org.apache.commons.sanselan.formats.bmp.pixelparsers
+                    - org.apache.commons.sanselan.formats.psd.datareaders
+                    - org.apache.commons.sanselan.palette
+                    - org.apache.commons.sanselan.formats.pcx
+                    - org.apache.commons.sanselan.formats.jpeg.exif
+                    - org.apache.commons.sanselan.formats.icns
+                    - org.apache.commons.sanselan.formats.tiff
+                    - org.apache.commons.sanselan.formats.tiff.photometricinterpreters
+                    - org.apache.commons.sanselan.common.bytesource
+                    - org.apache.commons.sanselan.formats.tiff.fieldtypes
+                    - org.apache.commons.sanselan.common
+                    - org.apache.commons.sanselan.formats.psd.dataparsers
+                    - org.apache.commons.sanselan.formats.xbm
+                    - org.apache.commons.sanselan.formats.jpeg.decoder
+                    - org.apache.commons.sanselan.util
+                    - org.apache.commons.sanselan.formats.pnm
+                    - org.apache.commons.sanselan.formats.png
+                    - org.apache.commons.sanselan.formats.jpeg.iptc
+                    - org.apache.commons.sanselan.formats.tiff.constants
+                    - org.apache.commons.sanselan.formats.tga
+                    - org.apache.commons.sanselan.formats.jpeg
+                    - org.apache.commons.sanselan.formats.wbmp
+                    - org.apache.commons.sanselan.formats.gif
+                    - org.apache.commons.sanselan.formats.png.scanlinefilters
+                    - org.apache.commons.sanselan.formats.dcx
+                    - org.apache.commons.sanselan.common.mylzw
+                    - org.apache.commons.sanselan.formats.rgbe
+                    - org.apache.commons.sanselan.formats.bmp
+                    - org.apache.commons.sanselan.icc
+                    - org.apache.commons.sanselan.formats.xpm
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.configadmin</artifactId>
+                <version>1.2.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.felix.cm;version="1.0"
+                    - org.apache.felix.cm.file;version="1.0"
+                    - org.osgi.service.cm;version="1.3"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.eventadmin</artifactId>
+                <version>1.2.15-R1324766</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.osgi.service.event;version="1.2"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.http.whiteboard</artifactId>
+                <version>2.2.1-R1239578</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.felix.http.whiteboard;version="1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.metatype</artifactId>
+                <version>1.0.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.felix.metatype;version="1.0.4"
+                    - org.osgi.service.metatype;version="1.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.prefs</artifactId>
+                <version>1.0.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.osgi.service.prefs;version="1.1"
+                    - org.apache.felix.prefs
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.scr</artifactId>
+                <version>1.6.1-R1236132</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.felix.scr;version="1.6"
+                    - org.osgi.service.component;version="1.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.webconsole</artifactId>
+                <version>3.1.9-R1239093</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.felix.webconsole;version="3.1.2"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>jackrabbit-api</artifactId>
+                <version>2.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.jackrabbit.api.jmx;version="2.0.0"
+                    - org.apache.jackrabbit.api;version="2.3"
+                    - org.apache.jackrabbit.api.security;version="2.3"
+                    - org.apache.jackrabbit.api.security.user;version="2.3.2"
+                    - org.apache.jackrabbit.api.security.authentication.token;version="2.3"
+                    - org.apache.jackrabbit.api.security.authorization;version="2.3"
+                    - org.apache.jackrabbit.api.security.principal;version="2.3"
+                    - org.apache.jackrabbit.api.management;version="2.3.1"
+                    - org.apache.jackrabbit.api.stats;version="1.2.0"
+                    - org.apache.jackrabbit.api.observation;version="2.3"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>jackrabbit-jcr-commons</artifactId>
+                <version>2.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.jackrabbit.util;version="2.4"
+                    - org.apache.jackrabbit.commons;version="2.4.0"
+                    - org.apache.jackrabbit.commons.webdav;version="2.5.0"
+                    - org.apache.jackrabbit.commons.packaging;version="2.2.1"
+                    - org.apache.jackrabbit.commons.json;version="2.2"
+                    - org.apache.jackrabbit.commons.repository;version="2.2"
+                    - org.apache.jackrabbit.commons.flat;version="2.3"
+                    - org.apache.jackrabbit.commons.query;version="2.3.1"
+                    - org.apache.jackrabbit.commons.query.sql2;version="2.3.1"
+                    - org.apache.jackrabbit.commons.query.qom;version="2.3.1"
+                    - org.apache.jackrabbit.commons.visitor;version="2.2"
+                    - org.apache.jackrabbit.commons.xml;version="2.2"
+                    - org.apache.jackrabbit.commons.predicate;version="2.2"
+                    - org.apache.jackrabbit.commons.jackrabbit.user;version="2.3"
+                    - org.apache.jackrabbit.commons.cnd;version="2.3"
+                    - org.apache.jackrabbit.commons.iterator;version="2.3"
+                    - org.apache.jackrabbit;version="2.2"
+                    - org.apache.jackrabbit.value;version="2.2.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>jackrabbit-jcr-rmi</artifactId>
+                <version>2.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.jackrabbit.rmi.server.security;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.server;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.client.iterator;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.remote.security;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.client;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.repository;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.iterator;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.observation;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.remote;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.server.principal;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.value;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.client.security;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.jackrabbit;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.client.principal;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.server.iterator;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.server.jmx;version="2.4.0"
+                    - org.apache.jackrabbit.rmi.remote.principal;version="2.4.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>jackrabbit-jcr-server</artifactId>
+                <version>2.3.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.jackrabbit.server.io;version="2.3"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>jackrabbit-spi</artifactId>
+                <version>2.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.jackrabbit.spi;version="3.0.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>jackrabbit-spi-commons</artifactId>
+                <version>2.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.jackrabbit.spi.commons;version="2.4.1"
+                    - org.apache.jackrabbit.spi.commons.conversion;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.util;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.identifier;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.name;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.logging;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.privilege;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.namespace;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.batch;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.query;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.query.sql;version="2.4.1"
+                    - org.apache.jackrabbit.spi.commons.query.sql2;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.query.xpath;version="2.4.1"
+                    - org.apache.jackrabbit.spi.commons.query.qom;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.lock;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.nodetype;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.nodetype.constraint;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.nodetype.compact;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.value;version="2.4.0"
+                    - org.apache.jackrabbit.spi.commons.iterator;version="2.4.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>jackrabbit-webdav</artifactId>
+                <version>2.4.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.jackrabbit.webdav.header;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.util;version="1.0.1"
+                    - org.apache.jackrabbit.webdav.server;version="1.0.0"
+                    - org.apache.jackrabbit.webdav;version="1.0.1"
+                    - org.apache.jackrabbit.webdav.io;version="1.0.1"
+                    - org.apache.jackrabbit.webdav.ordering;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.bind;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.search;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.client.methods;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.security;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.security.report;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.property;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.transaction;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.xml;version="1.1.0"
+                    - org.apache.jackrabbit.webdav.lock;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.observation;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.version;version="1.0.0"
+                    - org.apache.jackrabbit.webdav.version.report;version="1.0.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>fontbox</artifactId>
+                <version>1.6.0-r1199752</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.fontbox.cmap
+                    - org.apache.fontbox.pfb
+                    - org.apache.fontbox.afm
+                    - org.apache.fontbox.ttf
+                    - org.apache.fontbox.cff
+                    - org.apache.fontbox.cff.charset
+                    - org.apache.fontbox.cff.encoding
+                    - org.apache.fontbox.tika
+                    - org.apache.fontbox.util
+                    - org.apache.fontbox.encoding
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>jempbox</artifactId>
+                <version>1.6.0-r1199752</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.jempbox.xmp.pdfa;version="1.6.0.r1199752"
+                    - org.apache.jempbox.xmp;version="1.6.0.r1199752"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>pdfbox</artifactId>
+                <version>1.6.0-r1199752</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.pdfbox
+                    - org.apache.pdfbox.exceptions
+                    - org.apache.pdfbox.pdfparser
+                    - org.apache.pdfbox.cos
+                    - org.apache.pdfbox.pdfwriter
+                    - org.apache.pdfbox.pdmodel
+                    - org.apache.pdfbox.pdmodel.text
+                    - org.apache.pdfbox.pdmodel.documentinterchange.taggedpdf
+                    - org.apache.pdfbox.pdmodel.documentinterchange.markedcontent
+                    - org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure
+                    - org.apache.pdfbox.pdmodel.documentinterchange.prepress
+                    - org.apache.pdfbox.pdmodel.graphics
+                    - org.apache.pdfbox.pdmodel.graphics.color
+                    - org.apache.pdfbox.pdmodel.graphics.pattern
+                    - org.apache.pdfbox.pdmodel.graphics.shading
+                    - org.apache.pdfbox.pdmodel.graphics.predictor
+                    - org.apache.pdfbox.pdmodel.graphics.xobject
+                    - org.apache.pdfbox.pdmodel.graphics.optionalcontent
+                    - org.apache.pdfbox.pdmodel.fdf
+                    - org.apache.pdfbox.pdmodel.common
+                    - org.apache.pdfbox.pdmodel.common.filespecification
+                    - org.apache.pdfbox.pdmodel.common.function
+                    - org.apache.pdfbox.pdmodel.common.function.type4
+                    - org.apache.pdfbox.pdmodel.encryption
+                    - org.apache.pdfbox.pdmodel.markedcontent
+                    - org.apache.pdfbox.pdmodel.edit
+                    - org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination
+                    - org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline
+                    - org.apache.pdfbox.pdmodel.interactive.action
+                    - org.apache.pdfbox.pdmodel.interactive.action.type
+                    - org.apache.pdfbox.pdmodel.interactive.form
+                    - org.apache.pdfbox.pdmodel.interactive.annotation
+                    - org.apache.pdfbox.pdmodel.interactive.digitalsignature
+                    - org.apache.pdfbox.pdmodel.interactive.viewerpreferences
+                    - org.apache.pdfbox.pdmodel.interactive.measurement
+                    - org.apache.pdfbox.pdmodel.interactive.pagenavigation
+                    - org.apache.pdfbox.pdmodel.font
+                    - org.apache.pdfbox.encryption
+                    - org.apache.pdfbox.tika
+                    - org.apache.pdfbox.io
+                    - org.apache.pdfbox.io.ccitt
+                    - org.apache.pdfbox.filter
+                    - org.apache.pdfbox.pdfviewer
+                    - org.apache.pdfbox.examples.fdf
+                    - org.apache.pdfbox.examples.pdmodel
+                    - org.apache.pdfbox.examples.util
+                    - org.apache.pdfbox.examples.signature
+                    - org.apache.pdfbox.examples.persistence
+                    - org.apache.pdfbox.examples
+                    - org.apache.pdfbox.util
+                    - org.apache.pdfbox.util.operator
+                    - org.apache.pdfbox.util.operator.pagedrawer
+                    - org.apache.pdfbox.encoding
+                    - org.apache.pdfbox.encoding.conversion
+                    - org.apache.pdfbox.persistence.util
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sanselan</groupId>
+                <artifactId>sanselan</artifactId>
+                <version>0.97-incubator</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sanselan.formats.transparencyfilters
+                    - org.apache.sanselan.formats.jpeg.exifRewrite
+                    - org.apache.sanselan.formats.jpeg.iptc
+                    - org.apache.sanselan.formats.tiff.datareaders
+                    - org.apache.sanselan.formats.jpeg
+                    - org.apache.sanselan.util
+                    - org.apache.sanselan.formats.tiff.write
+                    - org.apache.sanselan.formats.jpeg.segments
+                    - org.apache.sanselan.formats.psd
+                    - org.apache.sanselan.common.mylzw
+                    - org.apache.sanselan.color
+                    - org.apache.sanselan.palette
+                    - org.apache.sanselan.formats.ico
+                    - org.apache.sanselan.common.byteSources
+                    - org.apache.sanselan.formats.png
+                    - org.apache.sanselan.formats.tiff
+                    - org.apache.sanselan.icc
+                    - org.apache.sanselan.formats.psd.datareaders
+                    - org.apache.sanselan.formats.png.chunks
+                    - org.apache.sanselan.formats.gif
+                    - org.apache.sanselan.formats.tiff.fieldtypes
+                    - org.apache.sanselan.formats.pnm
+                    - org.apache.sanselan.common
+                    - org.apache.sanselan.formats.bmp.writers
+                    - org.apache.sanselan.formats.bmp.pixelparsers
+                    - org.apache.sanselan.formats.tiff.constants
+                    - org.apache.sanselan.formats.bmp
+                    - org.apache.sanselan
+                    - org.apache.sanselan.formats.jpeg.xmp
+                    - org.apache.sanselan.formats.tga
+                    - org.apache.sanselan.formats.psd.dataparsers
+                    - org.apache.sanselan.formats.png.scanlinefilters
+                    - org.apache.sanselan.formats.tiff.photometricinterpreters
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.adapter</artifactId>
+                <version>2.0.14</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.adapter;version="2.0.6"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.api</artifactId>
+                <version>2.2.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.api;version="2.2"
+                    - org.apache.sling.api.adapter;version="2.2"
+                    - org.apache.sling.api.auth;version="1.0"
+                    - org.apache.sling.api.request;version="2.2"
+                    - org.apache.sling.api.resource;version="2.1"
+                    - org.apache.sling.api.scripting;version="2.1"
+                    - org.apache.sling.api.servlets;version="2.1"
+                    - org.apache.sling.api.wrappers;version="2.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.atom.taglib</artifactId>
+                <version>0.9.0-R988585</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.atom.taglib;version="1.0.0"
+                    - org.apache.sling.atom.taglib.media;version="1.0.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.auth.core</artifactId>
+                <version>1.0.7-R1239106</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.auth.core;version="1.1"
+                    - org.apache.sling.auth.core.spi;version="1.0.4"
+                    - org.apache.sling.engine.auth;version="2.0.6"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.bgservlets</artifactId>
+                <version>0.0.1-Rev1231138</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.bgservlets
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.classloader</artifactId>
+                <version>1.3.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.commons.classloader;version="1.3.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.compiler</artifactId>
+                <version>2.0.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.commons.compiler;version="2.0.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.html</artifactId>
+                <version>1.0.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.commons.html;version="1.0.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.json</artifactId>
+                <version>2.0.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.commons.json.http;version="2.0.4"
+                    - org.apache.sling.commons.json.util;version="2.0.4"
+                    - org.apache.sling.commons.json;version="2.0.4"
+                    - org.apache.sling.commons.json.xml;version="2.0.4"
+                    - org.apache.sling.commons.json.io;version="2.0.4"
+                    - org.apache.sling.commons.json.jcr;version="2.0.4"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.log</artifactId>
+                <version>2.1.3-R1232904</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.slf4j.impl;version="1.6.4"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.logservice</artifactId>
+                <version>0.0.1-R1232397</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.osgi.service.log;version="1.3"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.mime</artifactId>
+                <version>2.1.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.commons.mime;version="2.1.4"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.osgi</artifactId>
+                <version>2.1.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.commons.osgi;version="2.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.scheduler</artifactId>
+                <version>2.3.3-R1232965</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.commons.scheduler;version="2.2.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.threads</artifactId>
+                <version>3.1.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.commons.threads;version="3.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.engine</artifactId>
+                <version>2.2.5-R1239578</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.engine;version="2.1"
+                    - org.apache.sling.engine.servlets;version="2.0.6"
+                    - org.apache.sling.engine.jmx;version="1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.event</artifactId>
+                <version>3.1.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.event;version="2.4.0"
+                    - org.apache.sling.event.jobs;version="1.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.i18n</artifactId>
+                <version>2.2.1-R1243488</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.i18n;version="2.2.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.installer.core</artifactId>
+                <version>3.3.9-R1378456</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.installer.api;version="3.1.0"
+                    - org.apache.sling.installer.api.info;version="1.0.0"
+                    - org.apache.sling.installer.api.event;version="1.0.0"
+                    - org.apache.sling.installer.api.tasks;version="1.3.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.installer.factory.configuration</artifactId>
+                <version>1.0.8</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.installer.factories.configuration;version="1.0.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.jcr.api</artifactId>
+                <version>2.1.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.jcr.api;version="2.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.jcr.base</artifactId>
+                <version>2.1.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.jcr.base;version="2.1.0"
+                    - org.apache.sling.jcr.base.util;version="2.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.jcr.compiler</artifactId>
+                <version>2.0.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.jcr.compiler;version="2.0.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.jcr.contentloader</artifactId>
+                <version>2.1.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.jcr.contentloader;version="0.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.rewriter</artifactId>
+                <version>1.0.2</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.rewriter;version="1.0.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.scripting.api</artifactId>
+                <version>2.1.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.scripting.api;version="2.1.0"
+                    - javax.script
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.scripting.core</artifactId>
+                <version>2.0.24</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.scripting.core;version="2.0.8"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.scripting.java</artifactId>
+                <version>2.0.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - javax.inject
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.scripting.javascript</artifactId>
+                <version>2.0.12</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.scripting.javascript
+                    - org.mozilla.javascript
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.scripting.jsp</artifactId>
+                <version>2.0.24</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.scripting.jsp.jasper.runtime;version="2.0.8"
+                    - org.apache.sling.scripting.jsp.util;version="2.0.8"
+                    - javax.el;version="2.1"
+                    - javax.servlet.jsp;version="2.1"
+                    - javax.servlet.jsp.el;version="2.1"
+                    - javax.servlet.jsp.resources;version="2.1"
+                    - javax.servlet.jsp.tagext;version="2.1"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.scripting.jsp.taglib</artifactId>
+                <version>2.1.6</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.scripting.jsp.taglib;version="2.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.scripting.jst</artifactId>
+                <version>2.0.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.scripting.jst
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.servlets.post</artifactId>
+                <version>2.1.1-R1308838-96949</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.servlets.post;version="2.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.settings</artifactId>
+                <version>1.1.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.settings;version="1.1.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.startupfilter</artifactId>
+                <version>0.0.1-Rev1387008</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.sling.startupfilter;version="0.0.1.SNAPSHOT"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-core</artifactId>
+                <version>1.1-r1305920</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.tika.extractor;version="1.0.0"
+                    - org.apache.tika;version="1.0.0"
+                    - org.apache.tika.io;version="1.0.0"
+                    - org.apache.tika.metadata;version="1.0.0"
+                    - org.apache.tika.language;version="1.0.0"
+                    - org.apache.tika.mime;version="1.0.0"
+                    - org.apache.tika.config;version="1.0.0"
+                    - org.apache.tika.sax;version="1.0.0"
+                    - org.apache.tika.sax.xpath;version="1.0.0"
+                    - org.apache.tika.exception;version="1.0.0"
+                    - org.apache.tika.detect;version="1.0.0"
+                    - org.apache.tika.fork;version="1.0.0"
+                    - org.apache.tika.utils;version="1.0.0"
+                    - org.apache.tika.parser;version="1.0.0"
+                    - org.apache.tika.parser.external;version="1.0.0"
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-parsers</artifactId>
+                <version>1.0</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.tika.parser.asm
+                    - org.apache.tika.parser.audio
+                    - org.apache.tika.parser.chm.accessor
+                    - org.apache.tika.parser.chm.assertion
+                    - org.apache.tika.parser.chm
+                    - org.apache.tika.parser.chm.core
+                    - org.apache.tika.parser.chm.exception
+                    - org.apache.tika.parser.chm.lzx
+                    - org.apache.tika.parser.dwg
+                    - org.apache.tika.parser.epub
+                    - org.apache.tika.parser.feed
+                    - org.apache.tika.parser.font
+                    - org.apache.tika.parser.hdf
+                    - org.apache.tika.parser.html
+                    - org.apache.tika.parser.image
+                    - org.apache.tika.parser.image.xmp
+                    - org.apache.tika.parser.iwork
+                    - org.apache.tika.parser.jpeg
+                    - org.apache.tika.parser.mail
+                    - org.apache.tika.parser.mbox
+                    - org.apache.tika.parser.microsoft
+                    - org.apache.tika.parser.microsoft.ooxml
+                    - org.apache.tika.parser.mp3
+                    - org.apache.tika.parser.netcdf
+                    - org.apache.tika.parser.odf
+                    - org.apache.tika.parser.opendocument
+                    - org.apache.tika.parser.pdf
+                    - org.apache.tika.parser.pkg
+                    - org.apache.tika.parser.prt
+                    - org.apache.tika.parser.rtf
+                    - org.apache.tika.parser.txt
+                    - org.apache.tika.parser.video
+                    - org.apache.tika.parser.xml
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>1.6.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.commons.logging;version=1.1.1
+                    - org.apache.commons.logging.impl;version=1.1.1
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>1.6.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.apache.log4j;version=1.2.16
+                -->
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.6.4</version>
+                <scope>provided</scope>
+                <!--
+                    Export-Package:
+                    - org.slf4j;version=1.6.4
+                    - org.slf4j.spi;version=1.6.4
+                    - org.slf4j.helpers;version=1.6.4
+                -->
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps">
+        <include pattern="/apps/seo-extensions(/.*)?"/>
+        <exclude pattern="/apps/seo-extensions/install/(.*)?.jar$"/>
+    </filter>
+    <filter root="/etc">
+        <include pattern="/etc/designs"/>
+        <include pattern="/etc/designs/seo-extensions(/.*)?"/>
+    </filter>
+    <filter root="/libs/foundation/global.jsp"/>
+</workspaceFilter>
