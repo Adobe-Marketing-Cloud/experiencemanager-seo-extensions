@@ -16,7 +16,7 @@
     </description>
 
     <properties>
-        <app.name>seo-extensions</app.name>
+        <app.name>seo</app.name>
         <vendor.name>Adobe</vendor.name>
         <package.group>com.adobe.cq5.extensions/seo-extensions</package.group>
         <sling.host>http://localhost</sling.host>
