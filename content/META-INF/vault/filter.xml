@@ -4,9 +4,11 @@
         <include pattern="/apps/seo(/.*)?"/>
         <exclude pattern="/apps/seo/install/(.*)?.jar$"/>
     </filter>
-    <filter root="/apps/geometrixx/components/contentpage/content.jsp"/>
+    <filter root="/apps/geometrixx/components/page/body.jsp"/>
     <filter root="/etc">
         <include pattern="/etc/seo(/.*)?"/>
+        <include pattern="/etc/clientlibs"/>
+        <include pattern="/etc/clientlibs/seo(/.*)?"/>
     </filter>
     <filter root="/libs/foundation/global.jsp"/>
 </workspaceFilter>
