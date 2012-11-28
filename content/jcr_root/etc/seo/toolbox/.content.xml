@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2012-11-06T11:42:54.500+01:00"
+        cq:lastModifiedBy="admin"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="SEO Toolbox Editor"
+        sling:resourceType="seo/components/toolbox">
+        <image
+            jcr:lastModified="{Date}2012-11-06T11:20:47.448+01:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <tools
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <titles
+                jcr:created="{Date}2012-11-06T11:36:13.799+01:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2012-11-06T11:36:13.799+01:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="seo/components/tools/titles"/>
+            <titles_0
+                jcr:created="{Date}2012-11-06T11:42:54.499+01:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2012-11-06T11:42:54.499+01:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="seo/components/tools/titles"/>
+        </tools>
+    </jcr:content>
+</jcr:root>
