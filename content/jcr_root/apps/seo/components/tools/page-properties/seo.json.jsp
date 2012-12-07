@@ -13,7 +13,7 @@
 
     final JSONObject json = new JSONObject();
     final String analyzedPagePath = slingRequest.getParameter("page");
-    final Page analyzedPage = pageManager.getPage(analyzedPagePath);
+    final Page analyzedPage = analyzedPagePath == null ? null : pageManager.getPage(analyzedPagePath);
     if (analyzedPage != null) {
         final ValueMap analyzedPageProperties = analyzedPage.getProperties();
         for (final String name : PROPERTY_NAMES) {
@@ -32,5 +32,5 @@
             }
         }
     }
-    response.setContentType("application/json");
-%><%=json.toString()%>
+    out.append(json.toString());
+%>
