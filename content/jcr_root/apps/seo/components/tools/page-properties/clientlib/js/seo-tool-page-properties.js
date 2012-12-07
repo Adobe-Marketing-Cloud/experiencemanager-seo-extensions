@@ -13,7 +13,7 @@
             params[propName] = field.val();
             $.post(CQ.WCM.getPagePath() + "/jcr:content", params);
         });
-        var jsonURL = $(toolbox).attr("data-base-path");
+        var jsonURL = $(toolbox).attr("data-url");
         $.get(jsonURL, { page: CQ.WCM.getPagePath()}, function(pageProps) {
             inputFields.each(function(idx, field) {
                 var propNames = $(field).attr("data-properties").split(",");
