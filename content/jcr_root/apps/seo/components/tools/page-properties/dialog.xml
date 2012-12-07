@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Titles"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <titles
+                jcr:primaryType="cq:Panel"
+                title="Titles">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <urlHandle
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="suggestion: sling:alias,:nodename"
+                        fieldLabel="URL Handle Properties"
+                        name="./urlHandleProperties"
+                        xtype="textfield"/>
+                    <pageTitle
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="suggestion: pageTitle,jcr:title"
+                        fieldLabel="Page Title Properties"
+                        name="./pageTitleProperties"
+                        xtype="textfield"/>
+                    <pageHeading
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="suggested: title/jcr:title,jcr:title"
+                        fieldLabel="Page Heading Properties"
+                        name="./pageHeadingProperties"
+                        xtype="textfield"/>
+                    <navigationTitle
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="suggested: navTitle,jcr:title"
+                        fieldLabel="Navigation Title Properties"
+                        name="./navigationTitleProperties"
+                        xtype="textfield"/>
+                    <description
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="suggested: jcr:description"
+                        fieldLabel="Description Properties"
+                        name="./descriptionProperties"
+                        xtype="textfield"/>
+                    <keywords
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="suggested: cq:tags"
+                        fieldLabel="Keywords Properties"
+                        name="./keywordsProperties"
+                        xtype="textfield"/>
+                </items>
+            </titles>
+        </items>
+    </items>
+</jcr:root>
