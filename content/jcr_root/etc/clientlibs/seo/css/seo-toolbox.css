@@ -55,10 +55,52 @@ div.edit-box {
 }
 
 .cq-seo-toolbox h1,
-.cq-seo-toolbox h2 {
+.cq-seo-toolbox h2,
+.cq-seo-toolbox h3,
+.cq-seo-toolbox p {
     width: auto;
     margin: 0;
     padding: 0;
     color: #ffffff;
     border: none;
+}
+
+.cq-seo-toolbox h1 {
+    font-size: 22px;
+    margin-left: 8px;
+    vertical-align: bottom;
+    line-height: 28px;
+}
+
+.cq-seo-toolbox label {
+    margin-top: 6px;
+    margin-bottom: 2px;
+    font-size: 12px;
+    display: block;
+}
+
+.cq-seo-toolbox input {
+    width: 100%;
+    background-color: #888888;
+    border: none;
+    border-radius: 3px;
+    padding: 2px 3px;
+    margin: 0 -3px;
+    display: block;
+}
+
+.cq-seo-toolbox p {
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+.cq-seo-toolbox p[contenteditable] {
+    background-color: #000000;
+    border-radius: 5px;
+    padding: 3px 5px;
+    margin: 4px -5px 12px -5px;
+}
+
+#CQ .cq-sidekick .x-window-bbar .cq-sidekick-seo-toolbox {
+    background-image: url(../icons/seo-toolbox.png);
 }

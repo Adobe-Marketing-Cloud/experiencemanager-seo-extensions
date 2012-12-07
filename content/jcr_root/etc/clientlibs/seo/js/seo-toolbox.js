@@ -1,4 +1,4 @@
-;(function($) {
+;(function($, window, document, topWindow) {
     var initSEOToolbox = function() {
         $.get("/etc/seo/toolbox.tools.html?wcmmode=disabled",
                 function(data) {
@@ -20,7 +20,7 @@
     };
 
     var toggleSEOToolbox = function(cmp, evt) {
-        var toolboxHTML = $(".cq-seo-toolbox");
+        var toolboxHTML = CQ.WCM.getContentWindow().$CQ(".cq-seo-toolbox");
         if (toolboxHTML.size() === 0) {
             initSEOToolbox();
         } else {
@@ -38,7 +38,7 @@
     };
 
     var seoButtonConfig = {
-        text:"SEO",
+        iconCls: "cq-sidekick-seo-toolbox",
         tooltip: {
             title: "SEO",
             text: CQ.I18n.getMessage("Show the SEO Tools"),
@@ -48,28 +48,32 @@
         handler: toggleSEOToolbox
     };
 
-    CQ.WCM.on("sidekickready", function(sidekick) {
-        var bt = sidekick.getBottomToolbar();
-        bt.on("afterlayout", function(toolbar) {
-            var seoButtons = $.grep(toolbar.items.items, function(button) {
-                return button.text === "SEO";
-            });
-            if (seoButtons.length === 0) {
-                var seoButton;
-                var clientContextButtons = $.grep(toolbar.items.items, function(button) {
-                    return button.iconCls === "cq-sidekick-clientcontext";
-                });
-                if (clientContextButtons.length > 0) {
-                    var idx = $.inArray(clientContextButtons[0], bt.items.items);
-                    seoButton = toolbar.insertButton(idx + 1, seoButtonConfig);
-                }
-
-                var displaySEOToolbox = window.location.search.indexOf("wcmmode=seo") > -1;
-                if (displaySEOToolbox) {
-                    toggleSEOToolbox();
-                    seoButton && seoButton.toggle();
-                }
-            }
+    var addSEOButton = function(toolbar) {
+        var seoButtons = $.grep(toolbar.items.items, function(button) {
+            return button.iconCls === "cq-sidekick-seo-toolbox";
         });
-    })
-})($CQ);
+        if (seoButtons.length === 0) {
+            var seoButton;
+            var clientContextButtons = $.grep(toolbar.items.items, function(button) {
+                return button.iconCls === "cq-sidekick-clientcontext";
+            });
+            if (clientContextButtons.length > 0) {
+                var idx = $.inArray(clientContextButtons[0], toolbar.items.items);
+                seoButton = toolbar.insertButton(idx + 1, seoButtonConfig);
+            }
+
+            var displaySEOToolbox = window.location.search.indexOf("wcmmode=seo") > -1;
+            if (displaySEOToolbox) {
+                toggleSEOToolbox();
+                seoButton && seoButton.toggle();
+            }
+        }
+    };
+
+    topWindow.CQ.WCM.on("sidekickready", function(sidekick) {
+        var toolbar = sidekick.getBottomToolbar();
+        toolbar.on("afterlayout", function(tb) {
+            addSEOButton(tb);
+        });
+    });
+})($CQ, CQ.WCM.getContentWindow(), CQ.WCM.getContentWindow().document, CQ.WCM.getTopWindow());
