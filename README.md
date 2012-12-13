@@ -11,10 +11,11 @@ Currently the SEO Toolbox includes two SEO Tools. One helps an author to use coh
 * wrap seo toolbox into jQuery plugin
 * define SEO Tools jQuery plugin contract for extensions
 
-----------
-Copyright &copy; 2012 Julian Sedding
-Development kindly sponsored by Adobe Inc.
-Licensed under the [Apache License, Version 2.0][Apache]
+---
+
+Copyright © 2012 Julian Sedding  
+Development kindly sponsored by Adobe Inc.  
+Licensed under the [Apache License, Version 2.0][Apache]  
 
 [Apache]: http://www.apache.org/licenses/LICENSE-2.0
 
