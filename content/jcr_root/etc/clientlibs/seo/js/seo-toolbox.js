@@ -39,6 +39,7 @@
 
     var seoButtonConfig = {
         iconCls: "cq-sidekick-seo-toolbox",
+        icon: CQ.HTTP.getContextPath() + "/etc/clientlibs/seo/icons/seo-toolbox.png",
         tooltip: {
             title: "SEO",
             text: CQ.I18n.getMessage("Show the SEO Tools"),

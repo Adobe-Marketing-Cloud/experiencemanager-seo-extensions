@@ -11,7 +11,7 @@ div.edit-box {
     border-radius: 8px;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
-    width:440px;
+    width:400px;
     font-family: Tahoma, sans-serif;
     font-size: 14px;
     font-weight: normal;
@@ -36,6 +36,48 @@ div.edit-box {
     border: 1px solid #151515;
     border-radius: 8px 8px 0px 0px;
     white-space: nowrap;
+    position: relative;
+}
+
+.cq-seo-toolbox .cq-close {
+    background-image: url(../../../../libs/cq/personalization/components/clientcontext/clientlib/themes/default/icons/close.png);
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 14px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.cq-seo-toolbox .cq-seo-suggestions {
+    border-bottom: 1px solid #151515;
+    min-height: 40px;
+    padding: 8px;
+}
+
+.cq-seo-toolbox .cq-seo-suggestions li {
+    margin-left: 8px;
+    list-style-image: url(../icons/cross.png);
+}
+
+.cq-seo-toolbox .cq-seo-suggestions li.fixed {
+    color: #777777;
+    list-style-image: url(../icons/tick.png);
+}
+
+.cq-seo-toolbox ul {
+    list-style-type: disc;
+    padding: 0 0 0 20px;
+    margin: 10px 0;
+}
+
+.cq-seo-toolbox li {
+    border: none;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 2px 0;
+    width: auto;
 }
 
 .cq-seo-toolbox .tools .section {
@@ -66,10 +108,14 @@ div.edit-box {
 }
 
 .cq-seo-toolbox h1 {
-    font-size: 22px;
+    font-size: 20px;
     margin-left: 8px;
     vertical-align: bottom;
     line-height: 28px;
+}
+
+.cq-seo-toolbox h2 {
+    font-size: 18px;
 }
 
 .cq-seo-toolbox label {
@@ -87,6 +133,7 @@ div.edit-box {
     padding: 2px 3px;
     margin: 0 -3px;
     display: block;
+    font-size: 14px;
 }
 
 .cq-seo-toolbox p {
@@ -99,8 +146,4 @@ div.edit-box {
     border-radius: 5px;
     padding: 3px 5px;
     margin: 4px -5px 12px -5px;
-}
-
-#CQ .cq-sidekick .x-window-bbar .cq-sidekick-seo-toolbox {
-    background-image: url(../icons/seo-toolbox.png);
 }
