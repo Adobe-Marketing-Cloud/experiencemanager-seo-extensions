@@ -24,8 +24,6 @@ div.edit-box {
 
 .cq-seo-toolbox.CQjquery {
     position: fixed;
-    top: 50px;
-    left: 50px;
     opacity: 0.94;
 }
 
@@ -37,6 +35,7 @@ div.edit-box {
     border-radius: 8px 8px 0px 0px;
     white-space: nowrap;
     position: relative;
+    cursor: move;
 }
 
 .cq-seo-toolbox .cq-close {
@@ -48,6 +47,7 @@ div.edit-box {
     width: 20px;
     background-repeat: no-repeat;
     background-position: top right;
+    cursor: default;
 }
 
 .cq-seo-toolbox .cq-seo-suggestions {

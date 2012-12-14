@@ -4,6 +4,8 @@
 %><body>
     <h1><%=xssAPI.encodeForHTML(title)%></h1>
     <div class="edit-box">
-        <sling:include path=".tools.html"/>
+        <section class="cq-seo-toolbox">
+            <sling:include path=".tools.html"/>
+        </section>
     </div>
 </body>

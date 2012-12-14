@@ -1,5 +1,5 @@
 ;(function($, window, document, console) {
-    $(document).on("seo-toolbox-ready", function(event, toolbox) {
+    $(document).on("toolbox-ready", function(event, toolbox) {
         var inputFields = $(toolbox).find(".tools .page-properties [data-properties]");
         /*
             .on("click", function(event) {
@@ -33,10 +33,10 @@
         });
         console.debug("Initializing titles plugin", toolbox);
     });
-    $(document).on("seo-toolbox-beforeshow", function(event, toolbox) {
+    $(document).on("toolbox-show", function(event, toolbox) {
         console.debug("Initializing titles plugin beforeshow", toolbox);
     });
-    $(document).on("seo-toolbox-beforehide", function(event, toolbox) {
+    $(document).on("toolbox-beforehide", function(event, toolbox) {
         console.debug("Initializing titles plugin beforehide", toolbox);
     });
 })($CQ, window, document, CQ.WCM.getTopWindow().console);

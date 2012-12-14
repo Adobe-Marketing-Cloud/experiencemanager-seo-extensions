@@ -1,3 +1,5 @@
 #base=js
 
+jquery.cookie.js
+jquery.toolbox.js
 seo-toolbox.js
