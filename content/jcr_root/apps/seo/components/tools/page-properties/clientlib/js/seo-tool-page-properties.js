@@ -1,20 +1,28 @@
 ;(function($, window, document, console) {
-    $(document).on("toolbox-ready", function(event, toolbox) {
-        var inputFields = $(toolbox).find(".tools .page-properties [data-properties]");
-        /*
-            .on("click", function(event) {
-                $(event.currentTarget).attr("contenteditable", true);
+
+    var pluginName = 'page-properties';
+    var PagePropertiesPlugin = function(toolbox, element) {
+        this.toolbox = toolbox;
+        this.element = element;
+        this.$element = $(this.element);
+        this._init();
+    };
+
+    $.extend(PagePropertiesPlugin.prototype, {
+        _init: function() {
+            var self = this;
+            this.$element.on("change", "[data-properties]", function(event) {
+                var field = $(event.currentTarget);
+                var propName = field.attr("data-properties").split(",")[0];
+                var params = {};
+                params[propName] = field.val();
+                $.post(CQ.WCM.getPagePath() + "/jcr:content", params, function() {
+                    self.toolbox.refresh();
+                });
             });
-        */
-        $(toolbox).on("change", ".tools .page-properties [data-properties]", function(event) {
-            var field = $(event.currentTarget);
-            var propName = field.attr("data-properties").split(",")[0];
-            var params = {};
-            params[propName] = field.val();
-            $.post(CQ.WCM.getPagePath() + "/jcr:content", params);
-        });
-        var jsonURL = $(toolbox).attr("data-url");
-        $.get(jsonURL, { page: CQ.WCM.getPagePath()}, function(pageProps) {
+        },
+        _setData: function(pageProps) {
+            var inputFields = this.$element.find("[data-properties]");
             inputFields.each(function(idx, field) {
                 var propNames = $(field).attr("data-properties").split(",");
                 var value;
@@ -30,13 +38,29 @@
                     $(field).val(value);
                 }
             });
+        },
+        extractCriteria: function(json) {
+            var config = json[pluginName];
+            this._setData(config['data']);
+            return config['criteria'];
+        },
+        name: function() {
+            return pluginName;
+        }
+    });
+
+    $.fn[pluginName] = function(config) {
+        return this.each(function() {
+            if (!$.data(this, pluginName)) {
+                $.data(this, pluginName, new PagePropertiesPlugin(this, config));
+            }
         });
-        console.debug("Initializing titles plugin", toolbox);
-    });
-    $(document).on("toolbox-show", function(event, toolbox) {
-        console.debug("Initializing titles plugin beforeshow", toolbox);
-    });
-    $(document).on("toolbox-beforehide", function(event, toolbox) {
-        console.debug("Initializing titles plugin beforehide", toolbox);
+    };
+
+    $(document).on('toolbox-registerplugins', function(event, tb) {
+        $(tb).find('.tools .page-properties').each(function(i, el) {
+            var toolbox = $(tb).data('toolbox');
+            toolbox.registerPlugin(new PagePropertiesPlugin(toolbox, el));
+        });
     });
 })($CQ, window, document, CQ.WCM.getTopWindow().console);

@@ -15,6 +15,8 @@
         this.element = element;
         this.$element = $(this.element);
         this.config = $.extend({}, defaults, config);
+        this.plugins = [];
+        $.template('suggestionTemplate', '<li class=${status}>${hint}</li>');
         this._init();
     };
 
@@ -48,34 +50,29 @@
             if (c.cookie) {
                 this._initCookie();
             }
+            var self = this;
             $el.on('toolbox-contentloaded', function() {
+                $(document).trigger('toolbox-registerplugins', $el);
+                self._initPlugins();
                 console.debug("trigger toolbox-ready");
                 $(document).trigger('toolbox-ready', $el);
             });
         },
-        _getState: function() {
-            var e = this.$element;
-            var pos = e.offset();
-            var top = pos.top - $(document).scrollTop();
-            var left = pos.left - $(document).scrollLeft();
-            return {
-                visible: e.is(':visible'),
-                top: top,
-                left: left,
-                height: e.height(),
-                width: e.width()
-            };
-        },
-        _setState: function(state) {
-            var e = this.$element;
-            e.offset({ top: state.top, left: state.left });
-            e.height(state.height);
-            e.width(state.width);
-            if (state.visible && e.is(':hidden')) {
-                this.show();
-            } else if (!state.visible && e.is(':visible')) {
-                this.hide();
-            }
+        _initHTML: function() {
+            var self = this;
+            var c = this.config;
+            $.get("/etc/seo/toolbox.tools.html?wcmmode=disabled", function(data) {
+                        var toolboxHTML = $(data);
+                        var el = self.$element;
+                        el.append(toolboxHTML);
+                        if (c.closeSelector) {
+                            el.on("click", c.closeSelector, function() {
+                                self.hide();
+                            });
+                        }
+                        el.trigger("toolbox-contentloaded");
+                    }
+            );
         },
         _initCookie: function() {
             var self = this;
@@ -104,21 +101,48 @@
             el.on('dragstop', storeStateHandler);
             el.on('resizestop', storeStateHandler);
         },
-        _initHTML: function() {
+        _updateCriteria: function(criteria) {
             var self = this;
-            var c = this.config;
-            $.get("/etc/seo/toolbox.tools.html?wcmmode=disabled", function(data) {
-                        var toolboxHTML = $(data);
-                        var el = self.$element;
-                        el.append(toolboxHTML);
-                        if (c.closeSelector) {
-                            el.on("click", c.closeSelector, function() {
-                                self.hide();
-                            });
-                        }
-                        el.trigger("toolbox-contentloaded");
-                    }
-            );
+            var list = $("<ul></ul>");
+            $.each(criteria, function(i, criterion) {
+                $.tmpl('suggestionTemplate', criterion).appendTo(list);
+            });
+            self.$element.find('.cq-seo-suggestions ul').replaceWith(list);
+        },
+        _initPlugins: function() {
+            var self = this;
+            var jsonURL = this.$element.attr("data-url");
+            $.get(jsonURL, { page: CQ.WCM.getPagePath()}, function(json) {
+                var criteria = [];
+                $.each(self.plugins, function(i, plugin) {
+                    criteria.push(plugin.extractCriteria(json));
+                });
+                self._updateCriteria(criteria);
+            });
+        },
+        _getState: function() {
+            var e = this.$element;
+            var pos = e.offset();
+            var top = pos.top - $(document).scrollTop();
+            var left = pos.left - $(document).scrollLeft();
+            return {
+                visible: e.is(':visible'),
+                top: top,
+                left: left,
+                height: e.height(),
+                width: e.width()
+            };
+        },
+        _setState: function(state) {
+            var e = this.$element;
+            e.offset({ top: state.top, left: state.left });
+            e.height(state.height);
+            e.width(state.width);
+            if (state.visible && e.is(':hidden')) {
+                this.show();
+            } else if (!state.visible && e.is(':visible')) {
+                this.hide();
+            }
         },
         toggle: function() {
             if (this.$element.is(":hidden")) {
@@ -142,6 +166,12 @@
                     el.trigger("toolbox-hide");
                 });
             }
+        },
+        registerPlugin: function(plugin) {
+            this.plugins.push(plugin);
+        },
+        refresh: function() {
+            this._initPlugins();
         }
     });
 
