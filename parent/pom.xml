@@ -345,4 +345,21 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>adobe-external-central</id>
+            <name>Adobe Proxy Repository</name>
+            <url>http://repo.adobe.com/archiva/repository/day-central</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>adobe-external-central</id>
+            <name>Adobe Proxy Repository</name>
+            <url>http://repo.adobe.com/archiva/repository/day-central</url>
+            <layout>default</layout>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
