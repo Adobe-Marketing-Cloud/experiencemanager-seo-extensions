@@ -7,10 +7,7 @@
 <div class="cq-seo-suggestions">
     <h2>Suggested Improvements</h2>
     <ul>
-        <li class="todo">Add a description to the page.</li>
-        <li class="fixed">Use the same words in URL Handle and Page Title.</li>
-        <li class="fixed">Use the same words in URL Handle and Page Header.</li>
-        <li class="fixed">Use the same words in URL Handle and Navigation Title.</li>
+        <li class="fixed">Nothing to do.</li>
     </ul>
 </div>
 <sling:include path="tools" resourceType="foundation/components/parsys"/>
