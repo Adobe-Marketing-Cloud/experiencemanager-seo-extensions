@@ -37,18 +37,6 @@
         return seoButtons.length > 0 ? seoButtons[0] : undefined;
     };
 
-
-
-    /*
-     var contentWindow = topWindow.CQ.WCM.getContentWindow();
-     var displaySEOToolbox = contentWindow.location.search.indexOf("wcmmode=seo") > -1;
-     if (displaySEOToolbox) {
-     var toolbox = contentWindow.$CQ(contentWindow.document).find(".cq-seo-toolbox");
-     toolbox.fadeToggle();
-     seoButton && seoButton.toggle();
-     }
-     */
-
     topWindow.CQ.WCM.on("sidekickready", function(sidekick) {
         var toolbar = sidekick.getBottomToolbar();
         toolbar.on("afterlayout", function(tb) {
@@ -69,6 +57,13 @@
         $el.on('toolbox-hide', function(event, el) {
             findSEOButton(CQ).toggle(false);
         });
+
+        var contentWindow = topWindow.CQ.WCM.getContentWindow();
+        var displaySEOToolbox = contentWindow.location.search.indexOf("wcmmode=seo") > -1;
+        if (displaySEOToolbox) {
+            console.debug("show toolbox because of wcmmode=seo");
+            $el.data("toolbox").show();
+        }
     });
 
     $(function() {

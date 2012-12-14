@@ -38,7 +38,8 @@
     $.extend(Toolbox.prototype, {
         _init: function() {
             var c = this.config;
-            this.$element.addClass(c.extraClass)
+            var $el = this.$element;
+            $el.addClass(c.extraClass)
                     .resizable(c.resizableOptions)
                     .draggable(c.draggableOptions)
                     .removeAttr("style")
@@ -47,6 +48,10 @@
             if (c.cookie) {
                 this._initCookie();
             }
+            $el.on('toolbox-contentloaded', function() {
+                console.debug("trigger toolbox-ready");
+                $(document).trigger('toolbox-ready', $el);
+            });
         },
         _getState: function() {
             var e = this.$element;
@@ -75,17 +80,16 @@
         _initCookie: function() {
             var self = this;
             var el = this.$element;
-            $(document).on('toolbox-ready', function(event, el) {
-                var state = $.cookie(self.config.cookie);
-                console.debug("restore state from cookie", state);
-                if (state) {
-                    state = cookieHelper.deserialize(state);
-                    state.visible = state.visible === 'true';
-                    self._setState(state);
-                } else {
-                    self._setState({ visible: false, top: 50, left: 50 });
-                }
-            });
+
+            var state = $.cookie(self.config.cookie);
+            console.debug("restore state from cookie", state);
+            if (state) {
+                state = cookieHelper.deserialize(state);
+                state.visible = state.visible === 'true';
+                self._setState(state);
+            } else {
+                self._setState({ visible: false, top: 50, left: 50 });
+            }
 
             var storeStateHandler = function(event) {
                 var state = self._getState();
@@ -112,7 +116,7 @@
                                 self.hide();
                             });
                         }
-                        $(document).trigger("toolbox-ready", el);
+                        el.trigger("toolbox-contentloaded");
                     }
             );
         },
