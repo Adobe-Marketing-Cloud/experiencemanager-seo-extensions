@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2012-11-30T19:58:50.450+01:00"
+        cq:lastModified="{Date}2012-12-14T23:53:16.884+01:00"
         cq:lastModifiedBy="admin"
         jcr:primaryType="cq:PageContent"
         jcr:title="SEO Toolbox Editor"
@@ -27,6 +27,13 @@
                 pageHeadingProperties="title/jcr:title,jcr:title"
                 pageTitleProperties="pageTitle,jcr:title"
                 urlHandleProperties="sling:alias,:nodename"/>
+            <similar_pages
+                jcr:created="{Date}2012-12-07T14:56:40.711+01:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2012-12-07T14:56:40.711+01:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="seo/components/tools/similar-pages"/>
         </tools>
     </jcr:content>
 </jcr:root>
