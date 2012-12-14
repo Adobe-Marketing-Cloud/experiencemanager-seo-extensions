@@ -15,6 +15,10 @@
         as OSGi bundles.
     </description>
 
+    <prerequisites>
+        <maven>3.0.2</maven>
+    </prerequisites>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

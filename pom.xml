@@ -18,10 +18,6 @@
         This is the build reactor POM of the CQ5 application.
     </description>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
     <modules>
         <module>parent</module>
         <module>content/jcr_root/apps/seo/bundles/core</module>
