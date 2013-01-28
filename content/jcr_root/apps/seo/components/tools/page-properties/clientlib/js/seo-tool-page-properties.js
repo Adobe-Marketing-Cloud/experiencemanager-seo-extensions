@@ -14,7 +14,7 @@
             this.$element.on("change", "[data-properties]", function(event) {
                 var field = $(event.currentTarget);
                 var propName = field.attr("data-properties").split(",")[0];
-                var params = {};
+                var params = { _charset_: "utf-8" };
                 params[propName] = field.val();
                 $.post(CQ.WCM.getPagePath() + "/jcr:content", params, function() {
                     self.toolbox.refresh();
