@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps">
-        <include pattern="/apps/seo(/.*)?"/>
-        <exclude pattern="/apps/seo/install/(.*)?.jar$"/>
-    </filter>
+    <filter root="/apps/seo"/>
     <filter root="/apps/geometrixx/components/page/body.jsp"/>
-    <filter root="/etc">
-        <include pattern="/etc/seo(/.*)?"/>
-        <include pattern="/etc/clientlibs"/>
-        <include pattern="/etc/clientlibs/seo(/.*)?"/>
-    </filter>
+    <filter root="/etc/seo/toolbox"/>
+    <filter root="/etc/clientlibs/seo"/>
     <filter root="/libs/foundation/global.jsp"/>
 </workspaceFilter>
