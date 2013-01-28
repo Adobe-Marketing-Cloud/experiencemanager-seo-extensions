@@ -1,31 +1,13 @@
 <%--
-    = Page Properties SEO Tool
-     The page properties SEO Tool allows to have the following properties
-     checked according to a heuristics. The tool rejects pages when these
-     properties are not sufficietly coherent (i.e. they should use similar
-     keywords.
+    = Similar Pages SEO Tool
+     This plugin displays pages that are similar to the context page.
 
-     Available properties are:
-     * Page Title (html > head > title)
-     * Page Heading (body h1, only the first h1)
-     * Navigation Title (title used in navigation)
-     * Description (meta[name=description])
-     * Keywords (meta[name=keywords]
-     * URL handle (sling:alias, special property nodeName, not editable)
+     The list is populated via javascript with the data provided via teh *.seo.json request.
 
 --%><%@page session="false" contentType="text/html" pageEncoding="utf-8" %><%
-%><%@page import="
-    java.util.Map,
-    java.util.LinkedHashMap
-" %><%@include file="/libs/foundation/global.jsp"%><%
-    final Map<String, String> fields = new LinkedHashMap<java.lang.String, java.lang.String>();
-    fields.put("URL Handle", "urlHandleProperties");
-    fields.put("Page Title", "pageTitleProperties");
-    fields.put("Page Heading", "pageHeadingProperties");
-    fields.put("Navigation Title", "navigationTitleProperties");
-    fields.put("Description", "descriptionProperties");
-%>
+%><%@include file="/libs/foundation/global.jsp"%>
 <h2>Similar Pages</h2>
+<p>Please verify that none of the similar pages listed below conveys the same information as this page.</p>
 <ul>
     <li>No similar pages found.</li>
 </ul>

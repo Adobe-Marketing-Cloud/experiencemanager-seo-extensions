@@ -147,3 +147,7 @@ div.edit-box {
     padding: 3px 5px;
     margin: 4px -5px 12px -5px;
 }
+
+.cq-seo-toolbox a {
+    color: #ffffff;
+}

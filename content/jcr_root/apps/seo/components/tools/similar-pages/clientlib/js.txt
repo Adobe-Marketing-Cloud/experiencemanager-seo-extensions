@@ -1,1 +1,3 @@
 #base=js
+
+seo-tool-similar-pages.js
