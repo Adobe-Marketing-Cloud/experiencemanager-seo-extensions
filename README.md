@@ -20,8 +20,8 @@ That's it. You should now have a new button in your sidekick, which allows toggl
 
 ---
 
-Copyright © 2012 Julian Sedding
-Licensed under the [Apache License, Version 2.0][Apache]
+Copyright © 2012 Julian Sedding  
+Licensed under the [Apache License, Version 2.0][Apache]  
 
 [Apache]: http://www.apache.org/licenses/LICENSE-2.0
 
