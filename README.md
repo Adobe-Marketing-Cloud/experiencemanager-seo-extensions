@@ -6,16 +6,22 @@ The SEO Toolbox provides a UI widget that guides authors to optimize their pages
 ## SEO Tools aka Plugins
 Currently the SEO Toolbox includes two SEO Tools. One helps an author to use coherent wording in titles and the page's URL handle. The other helps detecting similar pages within the same site and provides links to any detected duplicates.
 
+## Getting Started
+Assuming you have CQ5 running on `http://localhost:4502`, you can clone the project and run `mvn install -P installPackage` from the project root directory. This will build a content-package and install it into your CQ5 instance.
+
+In order to then make use of the SEO Toolbox, you will need to add one more include statement to your page's rendering script. Ideally towards the end of the `<body>` tag. E.g. you can insert it in `/apps/geometrixx/components/page/body.jsp` and `/apps/geometrixx-outdoors/components/page/body.jsp` before the "timing" include.
+
+    <cq:include path="seo" resourceType="seo/components/toolbox/init"/>
+
+That's it. You should now have a new button in your sidekick, which allows toggling the SEO Toolbox.
+
 ## TODOs
-* sidekick button registration should be decoupled from open/close action frame
-* wrap seo toolbox into jQuery plugin
-* define SEO Tools jQuery plugin contract for extensions
+* document SEO Tools jQuery plugin contract for extensions
 
 ---
 
-Copyright © 2012 Julian Sedding  
-Development kindly sponsored by Adobe Inc.  
-Licensed under the [Apache License, Version 2.0][Apache]  
+Copyright © 2012 Julian Sedding
+Licensed under the [Apache License, Version 2.0][Apache]
 
 [Apache]: http://www.apache.org/licenses/LICENSE-2.0
 
