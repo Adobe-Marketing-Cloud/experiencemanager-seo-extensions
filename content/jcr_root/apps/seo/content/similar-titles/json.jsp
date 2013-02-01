@@ -10,7 +10,8 @@
     org.apache.sling.api.resource.ResourceResolver,
     java.util.List,
     java.util.ArrayList,
-    java.util.Collections
+    java.util.Collections,
+    org.apache.jackrabbit.util.Text
 " %><%@include file="/libs/foundation/global.jsp" %><%
 
     final String q = request.getParameter("q");
@@ -47,7 +48,9 @@
     private static final int MAX_RESULTS = 6;
 
     private static List<Page> findPages(ResourceResolver resourceResolver, String titleQuery) {
-        final String query = String.format(QUERY_PATTERN, titleQuery.toLowerCase());
+        final String escapedTitle = Text.escapeIllegalXpathSearchChars(titleQuery.toLowerCase()).replaceAll("'", "''");
+
+        final String query = String.format(QUERY_PATTERN, escapedTitle);
         final Iterator<Resource> pageResources = resourceResolver.findResources(query, Query.XPATH);
         final Iterator<Page> pages = ResourceUtil.adaptTo(pageResources, Page.class);
 

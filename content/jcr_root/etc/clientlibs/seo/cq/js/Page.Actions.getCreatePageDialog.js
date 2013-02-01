@@ -1,6 +1,6 @@
 ;(function(CQ) {
 
-    var similarTitlesURL = CQ.shared.HTTP.externalize('/apps/seo/content/similar-titles.json');
+    var similarTitlesURL = CQ.shared.HTTP.externalize('/apps/seo/content/similar-titles.json?_charset_=utf-8');
 
     var registerOnKeyEventHandler = function(title, similarTitles) {
         if(!title.enableKeyEvents){
