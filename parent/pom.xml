@@ -21,6 +21,8 @@
         <package.group>com.adobe.cq5.extensions/seo-extensions</package.group>
         <sling.host>http://localhost</sling.host>
         <sling.port>4502</sling.port>
+        <sling.user>admin</sling.user>
+        <sling.password>admin</sling.password>
         <sling.server>${sling.host}:${sling.port}</sling.server>
         <sling.plugin.install.path>/apps/${app.name}/install</sling.plugin.install.path>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,11 +78,6 @@
                     <groupId>org.apache.sling</groupId>
                     <artifactId>maven-sling-plugin</artifactId>
                     <version>2.1.0</version>
-                    <configuration>
-                        <slingUrl>${sling.server}/crx/repository/crx.default</slingUrl>
-                        <slingUrlSuffix>${sling.plugin.install.path}</slingUrlSuffix>
-                        <usePut>true</usePut>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -158,29 +155,68 @@
 
     <profiles>
         <profile>
-            <!--
-              Use this profile to install the OSGi bundle
-              automatically, during development
-            -->
+            <id>installPackage</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.day.jcr.vault</groupId>
+                            <artifactId>content-package-maven-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>content-package-install</id>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                    <configuration>
+                                        <userId>${sling.user}</userId>
+                                        <password>${sling.password}</password>
+                                        <targetURL>${sling.server}/crx/packmgr/service.jsp</targetURL>
+                                        <verbose>true</verbose>
+                                        <failOnError>true</failOnError>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+
+        <profile>
             <id>installBundle</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>maven-sling-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>install-bundle</id>
-                                <goals>
-                                    <goal>install</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.sling</groupId>
+                            <artifactId>maven-sling-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>install</id>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                            <configuration>
+                                <slingUrl>${sling.server}/crx/repository/crx.default</slingUrl>
+                                <slingUrlSuffix>${sling.plugin.install.path}</slingUrlSuffix>
+                                <user>${sling.user}</user>
+                                <password>${sling.password}</password>
+                                <usePut>true</usePut>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
             </build>
         </profile>
 

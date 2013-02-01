@@ -41,11 +41,13 @@
                 <excludes>
                     <exclude>**/.vlt</exclude>
                     <exclude>**/.vltignore</exclude>
+                    <exclude>**/.gitignore</exclude>
                     <exclude>**/*.iml</exclude>
                     <exclude>**/.classpath</exclude>
                     <exclude>**/.project</exclude>
                     <exclude>**/.DS_Store</exclude>
                     <exclude>**/target/**</exclude>
+                    <exclude>libs/**</exclude>
                 </excludes>
             </resource>
         </resources>
@@ -84,38 +86,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>installPackage</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.day.jcr.vault</groupId>
-                        <artifactId>content-package-maven-plugin</artifactId>
-                        <extensions>true</extensions>
-                        <executions>
-                            <execution>
-                                <phase>install</phase>
-                                <goals>
-                                    <goal>install</goal>
-                                </goals>
-                                <configuration>
-                                    <targetURL>${sling.server}/crx/packmgr/service.jsp</targetURL>
-                                    <install>true</install>
-                                    <verbose>true</verbose>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 
     <dependencies>
         <!-- Project Dependencies -->
