@@ -1,0 +1,16 @@
+#CQ .similar-titles ul {
+    padding: 3px 0;
+}
+
+#CQ .similar-titles a,
+#CQ .similar-titles span {
+    color: #15428B;
+}
+
+#CQ .similar-titles span.highlight {
+    text-decoration: underline;
+}
+
+#CQ .similar-titles span.path {
+    font-size: 10px;
+}
