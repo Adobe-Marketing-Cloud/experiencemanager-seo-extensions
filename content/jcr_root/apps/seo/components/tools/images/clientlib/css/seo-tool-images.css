@@ -1,0 +1,22 @@
+.cq-seo-toolbox .images ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cq-seo-toolbox .images ul ul {
+    float: left;
+    margin-bottom: 12px;
+}
+
+.cq-seo-toolbox .images ul li {
+    overflow: hidden;
+}
+
+.cq-seo-toolbox .images img {
+    float: left;
+    margin-right: 12px;
+    width: 60px;
+}
+
+
