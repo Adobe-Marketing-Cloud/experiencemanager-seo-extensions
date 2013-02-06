@@ -5,6 +5,7 @@
         this.toolbox = toolbox;
         this.element = element;
         this.$element = $(this.element);
+        $.template('criterionTemplate', '<li class=${status}>${hint}</li>');
         this._init();
     };
 
@@ -42,7 +43,12 @@
         extractCriteria: function(json) {
             var config = json[pluginName];
             this._setData(config['data']);
-            return config['criteria'];
+            var list = $("<ul></ul>");
+            $.each(config['criteria'], function(idx, criterion) {
+                list.append($.tmpl('criterionTemplate', criterion));
+            });
+            this.$element.find("ul").first().replaceWith(list);
+            return [];
         },
         name: function() {
             return pluginName;

@@ -26,6 +26,9 @@
     fields.put("Description", "descriptionProperties");
 %>
 <h2>Page Properties</h2>
+<ul>
+    <li class="fixed">Nothing to do.</li>
+</ul>
 <%
     for (final Map.Entry<String, String> field : fields.entrySet()) {
         final String props = properties.get(field.getValue(), String.class);

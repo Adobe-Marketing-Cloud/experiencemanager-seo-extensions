@@ -17,9 +17,18 @@ div.edit-box {
     font-weight: normal;
     color: #ffffff;
     z-index: 9002;
-    overflow: hidden;
+    overflow: visible;
     min-height: 100px;
     min-width: 180px;
+    padding-top: 28px; /* make space for header */
+    padding-bottom: 12px;
+}
+
+.cq-seo-toolbox .tools {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
 }
 
 .cq-seo-toolbox.CQjquery {
@@ -30,6 +39,7 @@ div.edit-box {
 .cq-seo-toolbox .cq-seo-header {
     height: 28px;
     margin: -1px;
+    margin-top: -28px; /* move header over container padding */
     background-color: #151515;
     border: 1px solid #151515;
     border-radius: 8px 8px 0px 0px;
@@ -50,26 +60,21 @@ div.edit-box {
     cursor: default;
 }
 
-.cq-seo-toolbox .cq-seo-suggestions {
-    border-bottom: 1px solid #151515;
-    min-height: 40px;
-    padding: 8px;
+.cq-seo-toolbox ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
 }
 
-.cq-seo-toolbox .cq-seo-suggestions li {
-    margin-left: 8px;
+
+.cq-seo-toolbox li.todo {
     list-style-image: url(../icons/cross.png);
 }
 
-.cq-seo-toolbox .cq-seo-suggestions li.fixed {
+.cq-seo-toolbox li.fixed {
     color: #777777;
     list-style-image: url(../icons/tick.png);
-}
-
-.cq-seo-toolbox ul {
-    list-style-type: disc;
-    padding: 0 0 0 20px;
-    margin: 10px 0;
 }
 
 .cq-seo-toolbox li {
@@ -116,6 +121,7 @@ div.edit-box {
 
 .cq-seo-toolbox h2 {
     font-size: 18px;
+    margin-bottom: 0.5em;
 }
 
 .cq-seo-toolbox label {
@@ -139,13 +145,6 @@ div.edit-box {
 .cq-seo-toolbox p {
     margin-top: 4px;
     margin-bottom: 12px;
-}
-
-.cq-seo-toolbox p[contenteditable] {
-    background-color: #000000;
-    border-radius: 5px;
-    padding: 3px 5px;
-    margin: 4px -5px 12px -5px;
 }
 
 .cq-seo-toolbox a {

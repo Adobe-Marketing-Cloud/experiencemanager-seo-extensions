@@ -1,14 +1,11 @@
-(function($, window, document, undefined) {
+;(function($, window, document, undefined) {
     var pluginName = 'toolbox';
     var defaults = {
-        extraClass: "CQjquery",
-        closeSelector: ".cq-close",
+        extraClass: "",
+        closeSelector: undefined,
         resizableOptions: {},
-        draggableOptions: {
-            handle: ".cq-seo-tools",
-            addClasses: false
-        },
-        cookie: "cq-seo-toolbox"
+        draggableOptions: {},
+        cookie: undefined
     };
 
     var Toolbox = function(element, config) {
@@ -16,7 +13,7 @@
         this.$element = $(this.element);
         this.config = $.extend({}, defaults, config);
         this.plugins = [];
-        $.template('suggestionTemplate', '<li class=${status}>${hint}</li>');
+        this.initialized = false;
         this._init();
     };
 
@@ -46,7 +43,6 @@
                     .draggable(c.draggableOptions)
                     .removeAttr("style")
                     .hide();
-            this._initHTML();
             if (c.cookie) {
                 this._initCookie();
             }
@@ -54,45 +50,44 @@
             $el.on('toolbox-contentloaded', function() {
                 $(document).trigger('toolbox-registerplugins', $el);
                 self._initPlugins();
-                console.debug("trigger toolbox-ready");
+                // console.debug("trigger toolbox-ready");
                 $(document).trigger('toolbox-ready', $el);
             });
         },
         _initHTML: function() {
             var self = this;
             var c = this.config;
+            // TODO: url should be provided via config
             $.get("/etc/seo/toolbox.tools.html?wcmmode=disabled", function(data) {
-                        var toolboxHTML = $(data);
-                        var el = self.$element;
-                        el.append(toolboxHTML);
-                        if (c.closeSelector) {
-                            el.on("click", c.closeSelector, function() {
-                                self.hide();
-                            });
-                        }
-                        el.trigger("toolbox-contentloaded");
-                    }
-            );
+                var toolboxHTML = $(data);
+                var el = self.$element;
+                el.append(toolboxHTML);
+                if (c.closeSelector) {
+                    el.on("click", c.closeSelector, function() {
+                        self.hide();
+                    });
+                }
+                el.trigger("toolbox-contentloaded");
+            });
         },
         _initCookie: function() {
             var self = this;
             var el = this.$element;
 
             var state = $.cookie(self.config.cookie);
-            console.debug("restore state from cookie", state);
+            // console.debug("restore state from cookie", state);
             if (state) {
                 state = cookieHelper.deserialize(state);
                 state.visible = state.visible === 'true';
-                self._setState(state);
             } else {
-                self._setState({ visible: false, top: 50, left: 50 });
+                state = { visible: false, top: 50, left: 50 }
             }
 
             var storeStateHandler = function(event) {
                 var state = self._getState();
                 state.visible = event.type !== 'toolbox-beforehide';
                 var stateString = cookieHelper.serialize(state);
-                console.debug("store state to cookie", stateString);
+                // console.debug("store state to cookie", stateString);
                 $.cookie(self.config.cookie, stateString);
             };
 
@@ -100,24 +95,19 @@
             el.on('toolbox-beforehide', storeStateHandler);
             el.on('dragstop', storeStateHandler);
             el.on('resizestop', storeStateHandler);
-        },
-        _updateCriteria: function(criteria) {
-            var self = this;
-            var list = $("<ul></ul>");
-            $.each(criteria, function(i, criterion) {
-                $.tmpl('suggestionTemplate', criterion).appendTo(list);
-            });
-            self.$element.find('.cq-seo-suggestions ul').replaceWith(list);
+
+            self._setState(state);
+            if (state.visible) {
+                this.show();
+            }
         },
         _initPlugins: function() {
             var self = this;
             var jsonURL = this.$element.attr("data-url");
-            $.get(jsonURL, { page: CQ.WCM.getPagePath()}, function(json) {
-                var criteria = [];
+            $.get(jsonURL, { page: window.CQ.WCM.getPagePath()}, function(json) {
                 $.each(self.plugins, function(i, plugin) {
-                    criteria.push(plugin.extractCriteria(json));
+                    plugin.extractCriteria(json);
                 });
-                self._updateCriteria(criteria);
             });
         },
         _getState: function() {
@@ -138,11 +128,6 @@
             e.offset({ top: state.top, left: state.left });
             e.height(state.height);
             e.width(state.width);
-            if (state.visible && e.is(':hidden')) {
-                this.show();
-            } else if (!state.visible && e.is(':visible')) {
-                this.hide();
-            }
         },
         toggle: function() {
             if (this.$element.is(":hidden")) {
@@ -152,16 +137,27 @@
             }
         },
         show: function() {
+            var self = this;
             var el = this.$element;
-            if (el.trigger("toolbox-beforeshow")) {
-                el.fadeIn(function() {
-                    el.trigger("toolbox-show");
+            if (!this.initialized) {
+                this.initialized = true;
+                $(document).one("toolbox-ready", function() {
+                    self.show();
                 });
+                this._initHTML();
+            } else {
+                if (el.is(":hidden") &&
+                        el.trigger("toolbox-beforeshow")) {
+                    el.fadeIn(function() {
+                        el.trigger("toolbox-show");
+                    });
+                }
             }
         },
         hide: function() {
             var el = this.$element;
-            if (el.trigger("toolbox-beforehide")) {
+            if (el.is(":visible") &&
+                    el.trigger("toolbox-beforehide")) {
                 el.fadeOut(function() {
                     el.trigger("toolbox-hide");
                 });
