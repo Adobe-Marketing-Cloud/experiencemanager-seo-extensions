@@ -25,8 +25,9 @@
                 img.on("click", function() {
                     var editable = CQ.WCM.getEditable(image.path);
                     var el = $(editable.el.dom);
-                    var scrollTop = el.offset().top - 100;
-                    $(document.body).animate({ scrollTop: scrollTop }, function() {
+                    var scrollTop = Math.round(el.offset().top - 100);
+                    var topLevelElement = jQuery.browser.webkit ? "body": "html";
+                    $(topLevelElement).animate({ scrollTop: scrollTop }, function() {
                         editable.componentDropTarget.flash();
                     });
                 });
