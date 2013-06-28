@@ -6,7 +6,8 @@
 
 .cq-seo-toolbox .images ul ul {
     float: left;
-    margin-bottom: 12px;
+    margin-left: 72px;
+    width: 100%;
 }
 
 .cq-seo-toolbox .images ul li {
@@ -15,8 +16,8 @@
 
 .cq-seo-toolbox .images img {
     float: left;
-    margin-right: 12px;
     width: 60px;
+    margin-right: -60px;
 }
 
 

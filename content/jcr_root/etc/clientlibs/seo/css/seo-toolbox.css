@@ -49,7 +49,7 @@ div.edit-box {
 }
 
 .cq-seo-toolbox .cq-close {
-    background-image: url(../../../../libs/cq/personalization/components/clientcontext/clientlib/themes/default/icons/close.png);
+    background-image: url(../icons/close.png);
     position: absolute;
     top: 8px;
     right: 8px;
