@@ -5,7 +5,7 @@
      The list is populated via javascript with the data provided via teh *.seo.json request.
 
 --%><%@page session="false" contentType="text/html" pageEncoding="utf-8" %><%
-%><%@include file="/libs/foundation/global.jsp"%>
+%><%@include file="/apps/seo/global.jsp"%>
 <h2>Similar Pages</h2>
 <p>Please verify that none of the similar pages listed below conveys the same information as this page.</p>
 <ul>

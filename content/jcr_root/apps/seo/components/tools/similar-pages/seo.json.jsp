@@ -6,7 +6,7 @@
     org.apache.commons.lang.StringUtils,
     org.apache.sling.commons.json.JSONObject,
     org.apache.sling.commons.json.JSONArray
-" %><%@include file="/libs/foundation/global.jsp"%><%
+" %><%@include file="/apps/seo/global.jsp"%><%
 
     final int parentLevel = 2;
     final int similarPagesLimit = 3;

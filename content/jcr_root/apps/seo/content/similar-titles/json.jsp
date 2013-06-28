@@ -12,7 +12,7 @@
     java.util.ArrayList,
     java.util.Collections,
     org.apache.jackrabbit.util.Text
-" %><%@include file="/libs/foundation/global.jsp" %><%
+" %><%@include file="/apps/seo/global.jsp" %><%
 
     final String q = request.getParameter("q");
 

@@ -1,5 +1,5 @@
 <%@page session="false" contentType="text/html" pageEncoding="utf-8" %><%
-%><%@include file="/libs/foundation/global.jsp"%><%
+%><%@include file="/apps/seo/global.jsp"%><%
     final String title = currentPage.getTitle() == null ? currentPage.getName() : currentPage.getTitle();
 %><body>
     <h1><%=xssAPI.encodeForHTML(title)%></h1>

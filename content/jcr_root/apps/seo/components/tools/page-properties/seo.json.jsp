@@ -5,7 +5,7 @@
     org.apache.commons.lang.StringUtils,
     java.util.Map,
     java.util.HashMap
-" %><%@include file="/libs/foundation/global.jsp"%><%
+" %><%@include file="/apps/seo/global.jsp"%><%
     final String[] PROPERTY_NAMES = {
             "urlHandleProperties",
             "pageTitleProperties",

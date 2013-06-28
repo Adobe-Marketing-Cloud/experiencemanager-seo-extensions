@@ -8,7 +8,7 @@
     java.util.Collections,
     java.util.List,
     java.util.ArrayList
-" %><%@include file="/libs/foundation/global.jsp"%><%
+" %><%@include file="/apps/seo/global.jsp"%><%
 
     final String analyzedPagePath = slingRequest.getParameter("page");
     final Page analyzedPage = analyzedPagePath == null ? null : pageManager.getPage(analyzedPagePath);

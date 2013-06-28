@@ -5,7 +5,7 @@
      The list is populated via javascript with the data provided via teh *.seo.json request.
 
 --%><%@page session="false" contentType="text/html" pageEncoding="utf-8" %><%
-%><%@include file="/libs/foundation/global.jsp"%>
+%><%@include file="/apps/seo/global.jsp"%>
 <h2>Images</h2>
 <p>Click the images to find them in the page.</p>
 <ul>

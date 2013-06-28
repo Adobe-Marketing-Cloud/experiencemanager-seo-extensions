@@ -17,7 +17,7 @@
 %><%@page import="
     java.util.Map,
     java.util.LinkedHashMap
-" %><%@include file="/libs/foundation/global.jsp"%><%
+" %><%@include file="/apps/seo/global.jsp"%><%
     final Map<String, String> fields = new LinkedHashMap<java.lang.String, java.lang.String>();
     fields.put("URL Handle", "urlHandleProperties");
     fields.put("Page Title", "pageTitleProperties");

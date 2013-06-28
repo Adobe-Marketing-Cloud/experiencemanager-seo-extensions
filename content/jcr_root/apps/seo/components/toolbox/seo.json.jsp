@@ -3,7 +3,7 @@
     java.util.Iterator,
     com.day.cq.wcm.api.components.IncludeOptions,
     org.apache.sling.commons.json.JSONObject
-" %><%@include file="/libs/foundation/global.jsp"%><%
+" %><%@include file="/apps/seo/global.jsp"%><%
     response.setContentType("application/json");
     final Iterator<Resource> tools = resource.getChild("tools").listChildren();
     JSONObject json = new JSONObject();
