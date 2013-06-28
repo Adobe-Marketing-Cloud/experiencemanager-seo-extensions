@@ -7,6 +7,7 @@
             text: CQ.I18n.getMessage("Show the SEO Tools"),
             autoHide: true
         },
+        disabled: true,
         enableToggle: true,
         handler: function() {
             var contentWindow = topWindow.CQ.WCM.getContentWindow();
@@ -39,7 +40,8 @@
         return seoButtons.length > 0 ? seoButtons[0] : undefined;
     };
 
-    $(document).one('toolbox-ready', function(event, el) {
+    $(document).one('toolbox-initialized', function(event, el) {
+        findSEOButton(CQ).enable();
         $(el)
             .on('toolbox-show', function(event, el) {
                 findSEOButton(CQ).toggle(true);
@@ -69,4 +71,4 @@
             }
         });
     });
-})($CQ, CQ.WCM.getContentWindow().document, CQ.WCM.getTopWindow());
+})($CQ, document, CQ.WCM.getTopWindow());

@@ -53,6 +53,7 @@
                 // console.debug("trigger toolbox-ready");
                 $(document).trigger('toolbox-ready', $el);
             });
+            $(document).trigger('toolbox-initialized', $el);
         },
         _initHTML: function() {
             var self = this;
