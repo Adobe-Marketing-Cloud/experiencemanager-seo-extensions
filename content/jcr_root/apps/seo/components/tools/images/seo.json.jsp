@@ -31,17 +31,22 @@
 %><%!
     private Iterator<Resource> collectImageResources(final Page page) {
         final Resource parResource = page.getContentResource("par");
-        final Iterator<Resource> paragraphs = parResource.listChildren();
-        final List<Resource> images = new ArrayList<Resource>();
-        while (paragraphs.hasNext()) {
-            final Resource image = paragraphs.next();
-            // TODO: make resourceTypes configurable
-            // currently this covers image and textimage
-            if (image.getResourceType().endsWith("image")) {
-                images.add(image);
+        // TODO: improve the search for paragraphs, e.g. find all components
+        // TODO: within parsys components (configurable list of resource types)
+        if (parResource != null) {
+            final Iterator<Resource> paragraphs = parResource.listChildren();
+            final List<Resource> images = new ArrayList<Resource>();
+            while (paragraphs.hasNext()) {
+                final Resource image = paragraphs.next();
+                // TODO: make resourceTypes configurable
+                // currently this covers image and textimage
+                if (image.getResourceType().endsWith("image")) {
+                    images.add(image);
+                }
             }
+            return images.iterator();
         }
-        return images.iterator();
+        return Collections.<Resource>emptySet().iterator();
     }
 
     private JSONObject createImageObject(final Resource image) throws JSONException {
