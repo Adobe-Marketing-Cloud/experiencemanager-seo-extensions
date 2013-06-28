@@ -3,5 +3,4 @@
     <filter root="/apps/seo"/>
     <filter root="/etc/seo/toolbox"/>
     <filter root="/etc/clientlibs/seo"/>
-    <filter root="/libs/foundation/global.jsp"/>
 </workspaceFilter>

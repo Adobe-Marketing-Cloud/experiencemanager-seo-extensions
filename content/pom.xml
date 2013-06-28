@@ -47,7 +47,6 @@
                     <exclude>**/.project</exclude>
                     <exclude>**/.DS_Store</exclude>
                     <exclude>**/target/**</exclude>
-                    <exclude>libs/**</exclude>
                 </excludes>
             </resource>
         </resources>
