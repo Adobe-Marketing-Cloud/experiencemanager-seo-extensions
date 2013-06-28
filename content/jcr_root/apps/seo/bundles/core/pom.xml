@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.adobe.cq5.extensions</groupId>
+        <groupId>net.distilledcode.cq5.extensions</groupId>
         <artifactId>seo-extensions-cq5-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../../../../../../parent/pom.xml</relativePath>
@@ -35,7 +35,7 @@
                     <instructions>
                         <Export-Package></Export-Package>
                         <Import-Package>*</Import-Package>
-                        <Private-Package>com.adobe.cq5.extensions.seo</Private-Package>
+                        <Private-Package>net.distilledcode.cq5.extensions.seo</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>

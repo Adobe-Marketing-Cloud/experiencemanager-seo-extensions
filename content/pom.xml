@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.adobe.cq5.extensions</groupId>
+        <groupId>net.distilledcode.cq5.extensions</groupId>
         <artifactId>seo-extensions-cq5-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../parent/pom.xml</relativePath>
@@ -67,7 +67,7 @@
                     <group>${package.group}</group>
                     <embeddeds>
                         <embedded>
-                            <groupId>com.adobe.cq5.extensions</groupId>
+                            <groupId>net.distilledcode.cq5.extensions</groupId>
                             <artifactId>seo-extensions-cq5-core</artifactId>
                             <target>/apps/${app.name}/install</target>
                         </embedded>
@@ -89,7 +89,7 @@
     <dependencies>
         <!-- Project Dependencies -->
         <dependency>
-            <groupId>com.adobe.cq5.extensions</groupId>
+            <groupId>net.distilledcode.cq5.extensions</groupId>
             <artifactId>seo-extensions-cq5-core</artifactId>
         </dependency>
 
