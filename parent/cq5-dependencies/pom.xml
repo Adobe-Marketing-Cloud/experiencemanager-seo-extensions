@@ -1545,22 +1545,22 @@
             <dependency>
                 <groupId>commons-collections</groupId>
                 <artifactId>commons-collections</artifactId>
-                <version>3.2.1</version>
+                <version>3.2.2</version>
                 <scope>provided</scope>
                 <!--
                     Export-Package:
-                    - org.apache.commons.collections.map;version="3.2.1"
-                    - org.apache.commons.collections.buffer;version="3.2.1"
-                    - org.apache.commons.collections.comparators;version="3.2.1"
-                    - org.apache.commons.collections.collection;version="3.2.1"
-                    - org.apache.commons.collections.bag;version="3.2.1"
-                    - org.apache.commons.collections.iterators;version="3.2.1"
-                    - org.apache.commons.collections.bidimap;version="3.2.1"
-                    - org.apache.commons.collections.set;version="3.2.1"
-                    - org.apache.commons.collections.functors;version="3.2.1"
-                    - org.apache.commons.collections.list;version="3.2.1"
-                    - org.apache.commons.collections.keyvalue;version="3.2.1"
-                    - org.apache.commons.collections;version="3.2.1"
+                    - org.apache.commons.collections.map;version="3.2.2"
+                    - org.apache.commons.collections.buffer;version="3.2.2"
+                    - org.apache.commons.collections.comparators;version="3.2.2"
+                    - org.apache.commons.collections.collection;version="3.2.2"
+                    - org.apache.commons.collections.bag;version="3.2.2"
+                    - org.apache.commons.collections.iterators;version="3.2.2"
+                    - org.apache.commons.collections.bidimap;version="3.2.2"
+                    - org.apache.commons.collections.set;version="3.2.2"
+                    - org.apache.commons.collections.functors;version="3.2.2"
+                    - org.apache.commons.collections.list;version="3.2.2"
+                    - org.apache.commons.collections.keyvalue;version="3.2.2"
+                    - org.apache.commons.collections;version="3.2.2"
                 -->
             </dependency>
             <dependency>
